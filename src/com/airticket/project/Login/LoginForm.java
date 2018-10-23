@@ -5,10 +5,9 @@ import java.awt.*;
 
 public class LoginForm {
     private JPanel loginForm;
-    private JLabel titleLogin;
-    private JTextField username;
-    private JButton loginSubmit;
-    private JPasswordField password;
+    private JButton LOGINButton;
+    private JTextField nhậpTàiKhoảnTextField;
+    private JPasswordField passwordField2;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("LoginForm");
@@ -54,5 +53,9 @@ public class LoginForm {
      */
     public JComponent $$$getRootComponent$$$() {
         return loginForm;
+    }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
     }
 }
