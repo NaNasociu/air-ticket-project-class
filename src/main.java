@@ -1,4 +1,2 @@
-package
-
 public class main {
 }
