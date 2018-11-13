@@ -39,6 +39,7 @@ public class Login {
         ResultSet rset = db.ExecuteSQLStatementWithResult(sql_stmt);
         while (rset.next()) {
             isLogin = true;
+
             return true;
         }
         return false;
