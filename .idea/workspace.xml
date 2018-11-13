@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef63ef44-7713-4b06-819f-33408bd65073" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/airticket/project/Controller/Login/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/airticket/project/Controller/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UML.vsdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/air-ticket-project-class.iml" beforeDir="false" afterPath="$PROJECT_DIR$/air-ticket-project-class.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/airticket/project/Connector/Connector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/airticket/project/Connector/Connector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,7 +16,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="form" value="13" />
-          <entry key="gitignore" value="1" />
+          <entry key="gitignore" value="2" />
           <entry key="iml" value="2" />
           <entry key="java" value="47" />
           <entry key="jrxml" value="1" />
@@ -33,7 +28,7 @@
           <entry key="GUI_DESIGNER_FORM" value="13" />
           <entry key="IDEA_MODULE" value="2" />
           <entry key="JAVA" value="46" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
           <entry key="Scratch" value="1" />
           <entry key="XML" value="2" />
         </counts>
@@ -133,7 +128,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/airticket/project/Controller/Login/Login.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="477">
@@ -151,6 +146,15 @@
                 <element signature="e#485#486#0" expanded="true" />
                 <element signature="e#525#526#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -196,11 +200,11 @@
         <option value="$PROJECT_DIR$/src/com/airticket/project/GUI/FlightManage/FlightManager.form" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/com/airticket/project/config.java" />
         <option value="$PROJECT_DIR$/src/com/airticket/project/Util/ResultSetTableModel.java" />
         <option value="$PROJECT_DIR$/src/com/airticket/project/Connector/Connector.java" />
         <option value="$PROJECT_DIR$/src/com/airticket/project/Controller/Login/Login.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -314,7 +318,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="256" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542074515936" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542075096637" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/connector/mysql-connector-java-8.0.13.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -510,13 +514,6 @@
     <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/FlightManage/FlightManager.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo_code/src/employees/rptEmployees.jrxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-420" />
@@ -642,6 +639,13 @@
             <element signature="e#485#486#0" expanded="true" />
             <element signature="e#525#526#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
