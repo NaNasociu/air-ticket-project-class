@@ -31,4 +31,15 @@ public class Connector {
             System.out.println("The following error has occured: " + ex.getMessage());
         }
     }
+
+    public ResultSet ExecuteSQLStatementWithResult(String sql_stmt) {
+        ResultSet rset = null;
+        try {
+            statement = connection.createStatement();
+            rset = statement.executeQuery(sql_stmt);
+        } catch (SQLException ex) {
+            System.out.println("The following error has occured: " + ex.getMessage());
+        }
+        return rset;
+    }
 }
