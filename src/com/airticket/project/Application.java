@@ -1,18 +1,12 @@
 package com.airticket.project;
 
 
-import com.airticket.project.GUI.frmEmployee;
-import com.airticket.project.GUI.frmLogin;
-import com.airticket.project.GUI.frmMainPage;
-
+import com.airticket.project.GUI.Login.*;
 
 public class Application {
     public static void main(String[] args) {
-        //frmLogin login = new frmLogin();
-        //login.show();
-
-        frmEmployee employee = new frmEmployee();
-        employee.show();
-
+        //username: admin
+        //password: 123456
+        new frmLogin();
     }
 }
