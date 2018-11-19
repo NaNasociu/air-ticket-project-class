@@ -1,6 +1,5 @@
 package com.airticket.project.GUI.Login;
 
-import com.airticket.project.GUI.*;
 import com.airticket.project.GUI.Menu.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
