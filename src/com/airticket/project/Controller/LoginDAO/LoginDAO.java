@@ -1,12 +1,10 @@
-package com.airticket.project.Controller.Login;
+package com.airticket.project.Controller.LoginDAO;
 
 import com.airticket.project.Connector.Connector;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.SQLInput;
+import java.sql.*;
 
-public class Login {
+public class LoginDAO {
     private String username;
     private String password;
     private boolean isLogin;
@@ -32,15 +30,26 @@ public class Login {
     }
 
     public boolean loginSession() throws SQLException {
-        String sql_stmt = "";
 
         Connector db = new Connector();
+        Connection conn = db.getConnection();
+        CallableStatement statement = conn.prepareCall("{call sp_check_login(?, ?)}");
+        statement.setString(1, username);
+        statement.setString(2, password);
 
-        ResultSet rset = db.ExecuteSQLStatementWithResult(sql_stmt);
-        while (rset.next()) {
-            isLogin = true;
-
-            return true;
+        boolean hadResults = statement.execute();
+        while (hadResults) {
+            ResultSet resultSet = statement.getResultSet();
+            // process result set
+            while (resultSet.next()) {
+                // retrieve values of fields
+                Integer status = resultSet.getInt("status_");
+                System.out.println(status);
+                if (status == 1) {
+                    return true;
+                }
+            }
+            hadResults = statement.getMoreResults();
         }
         return false;
     };

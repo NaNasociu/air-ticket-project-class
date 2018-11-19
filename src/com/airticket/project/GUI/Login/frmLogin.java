@@ -1,11 +1,13 @@
 package com.airticket.project.GUI.Login;
 
+import com.airticket.project.Controller.LoginDAO.LoginDAO;
 import com.airticket.project.GUI.Menu.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.util.Arrays;
 
 public class frmLogin extends JFrame implements ActionListener {
@@ -61,7 +63,7 @@ public class frmLogin extends JFrame implements ActionListener {
 
     private JPanel createButtonPanel(){
         JPanel panel = new JPanel();
-        panel.add(btn_login = createButton(act_login,"Login"));
+        panel.add(btn_login = createButton(act_login,"LoginDAO"));
         panel.add(btn_clear = createButton(act_clear,"Clear"));
         return panel;
     }
@@ -75,24 +77,24 @@ public class frmLogin extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e){
         String command = e.getActionCommand();
-
-        //click button login
-        if(act_login.equals(command)){
-            if(checkData(tf_username.getText(), tf_password.getPassword())){
-                JOptionPane.showMessageDialog(null,"login success!","Success",JOptionPane.INFORMATION_MESSAGE);
-                setVisible(false);
-                new frmMainPage();
-            }else{
-                JOptionPane.showMessageDialog(null,"Wrong username or password","Fail",JOptionPane.ERROR_MESSAGE);
+        if (act_login.equals(command)) {
+            try {
+                LoginDAO loginDao = new LoginDAO();
+                loginDao.setUsername(tf_username.getText());
+                loginDao.setPassword(String.valueOf(tf_password.getPassword()));
+                if (loginDao.loginSession()) {
+                    JOptionPane.showMessageDialog(null,"login success!","Success",JOptionPane.INFORMATION_MESSAGE);
+                    setVisible(false);
+                    new frmMainPage();
+                } else {
+                    JOptionPane.showMessageDialog(null,"Wrong username or password","Fail",JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (SQLException e1) {
+                e1.printStackTrace();
             }
         }
     }
 
-    private boolean checkData(String input_name, char[] input_password) {
-        String name = "admin";
-        char[] password = {'1', '2', '3', '4', '5', '6'};
-        return (Arrays.equals(input_password,password) && name.equals(input_name));
-    }
 
     public static void main(String[] args) {
         new frmLogin();
