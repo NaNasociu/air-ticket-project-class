@@ -1,6 +1,8 @@
 package com.airticket.project.Connector;
 
 import com.airticket.project.config;
+import com.mysql.cj.xdevapi.JsonArray;
+import netscape.javascript.JSObject;
 
 import java.sql.*;
 
@@ -37,6 +39,7 @@ public class Connector {
         try {
             statement = connection.createStatement();
             rset = statement.executeQuery(sql_stmt);
+            return rset;
         } catch (SQLException ex) {
             System.out.println("The following error has occured: " + ex.getMessage());
         }
