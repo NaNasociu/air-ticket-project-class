@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class frmMainPage extends JFrame implements ActionListener {
     private JButton btn1,btn2,btn3,btn4;
@@ -52,7 +53,11 @@ public class frmMainPage extends JFrame implements ActionListener {
         String command = e.getActionCommand();
         if(command == "Booking"){
             setVisible(false);
-            new frmBooking();
+            try {
+                new frmBooking();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
         }
     }
 

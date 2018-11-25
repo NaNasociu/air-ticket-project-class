@@ -39,7 +39,6 @@ public class Connector {
         try {
             statement = connection.createStatement();
             rset = statement.executeQuery(sql_stmt);
-            return rset;
         } catch (SQLException ex) {
             System.out.println("The following error has occured: " + ex.getMessage());
         }

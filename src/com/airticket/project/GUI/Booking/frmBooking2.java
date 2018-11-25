@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import javax.swing.border.EmptyBorder;
 
 public class frmBooking2 extends JFrame implements ActionListener {
@@ -64,7 +65,11 @@ public class frmBooking2 extends JFrame implements ActionListener {
 
         if(command == "Back"){
             setVisible(false);
-            new frmBooking();
+            try {
+                new frmBooking();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
