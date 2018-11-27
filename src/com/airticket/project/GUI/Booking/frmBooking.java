@@ -1,5 +1,6 @@
 package com.airticket.project.GUI.Booking;
 
+import com.airticket.project.Controller.BookingDAO.Booking;
 import com.airticket.project.Controller.BookingDAO.BookingDAO;
 import com.airticket.project.GUI.Menu.frmMainPage;
 
@@ -8,19 +9,20 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.border.EmptyBorder;
 
 public class frmBooking extends JFrame implements ActionListener {
     private JTextField tf_temp, tf_temp2, tf_temp3, tf_temp4;
+    private JComboBox jBoxAirport_in, jBoxAirport_out;
     String[] airport_in;
     String[] airport_out;
     String[] choices_2 = {"VND"};
     int size = 15;
-
+    private BookingDAO bookingDAO = new BookingDAO();
     public frmBooking() throws SQLException {
-        BookingDAO bookingDAO = new BookingDAO();
-        airport_in = bookingDAO.getAirport_in();
-        airport_out = bookingDAO.getAirport_out();
+        airport_in = bookingDAO.getAirportName();
+        airport_out = bookingDAO.getAirportName();
         setTitle("Booking - step 1");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout(FlowLayout.CENTER));
@@ -32,7 +34,6 @@ public class frmBooking extends JFrame implements ActionListener {
         pack();
         setVisible(true);
         setLocationRelativeTo(null);
-
     }
 
     private JPanel createMainPanel(){
@@ -52,17 +53,11 @@ public class frmBooking extends JFrame implements ActionListener {
     private JPanel createInputPanel(){
         JPanel panel = new JPanel(new GridLayout(6,2,5,5));
         panel.add(new JLabel("Origin:"));
-        panel.add(new JComboBox(airport_in));
+        panel.add(jBoxAirport_in = new JComboBox(airport_in));
         panel.add(new JLabel("Destination:"));
-        panel.add(new JComboBox(airport_out));
+        panel.add(jBoxAirport_out = new JComboBox(airport_out));
         panel.add(new JLabel("From:"));
         panel.add(new JTextField(size));
-        panel.add(new JLabel("To:"));
-        panel.add(new JTextField(size));
-        panel.add(new JLabel("Number of passengers:"));
-        panel.add(new JTextField(size));
-        panel.add(new JLabel("Currency:"));
-        panel.add(new JComboBox(choices_2));
         return panel;
     }
 
@@ -75,6 +70,10 @@ public class frmBooking extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent evt){
         String command = evt.getActionCommand();
         if(command == "Search Flights"){
+
+            System.out.println(bookingDAO.convertNameToId(jBoxAirport_out.getSelectedItem().toString()));
+            System.out.println(bookingDAO.convertNameToId(jBoxAirport_in.getSelectedItem().toString()));
+
             setVisible(false);
             new frmBooking2();
         }

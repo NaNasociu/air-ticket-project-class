@@ -8,23 +8,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class BookingDAO {
-    public String[] getAirport_in() throws SQLException {
-        Connector db = new Connector();
-        String stmt = "call sp_show_option_data()";
-        ResultSet rs = db.ExecuteSQLStatementWithResult(stmt);
-        Integer i = 0;
-        rs.beforeFirst();
-        rs.last();
-        String[] list = new String[rs.getRow()];
-        rs.beforeFirst();
+    private ArrayList<Booking> airport = new ArrayList<Booking>();
 
-        while (rs.next()) {
-            list[i] = rs.getString("airport_in");
-            i++;
-        }
-        return  list;
-    }
-    public String[] getAirport_out() throws SQLException {
+    public BookingDAO() throws SQLException {
         Connector db = new Connector();
         String stmt = "call sp_show_option_data()";
         ResultSet rs = db.ExecuteSQLStatementWithResult(stmt);
@@ -34,9 +20,35 @@ public class BookingDAO {
         String[] list = new String[rs.getRow()];
         rs.beforeFirst();
         while (rs.next()) {
-            list[i] = rs.getString("airport_out");
-            i++;
+            String name = rs.getString("airport_name");
+            String id = rs.getString("airport_id");
+            Booking temp = new Booking(id, name);
+            airport.add(temp);
         }
-        return  list;
+    }
+
+    public String[] getAirportName() throws SQLException {
+        ArrayList<String> list = new ArrayList<>();
+        for (Booking temp : airport) {
+            list.add(temp.getAirport_name());
+        }
+        String[] airportList = new String[list.size()];
+        airportList = list.toArray(airportList);
+        return  airportList;
+    }
+
+    public String convertNameToId(String name) {
+        String idTemp = "";
+        for (Booking temp : airport) {
+            if (temp.getAirport_name() == name) {
+                idTemp = temp.getAirport_id();
+            }
+        }
+        return idTemp;
+    }
+
+    public String getFlightList(String airportIn, String airportOut) {
+        String temp = "";
+        return temp;
     }
 }
