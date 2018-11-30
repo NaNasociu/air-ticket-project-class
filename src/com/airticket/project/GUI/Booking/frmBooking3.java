@@ -6,9 +6,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import javax.swing.border.EmptyBorder;
+import com.toedter.calendar.JDateChooser;
 
 public class frmBooking3 extends JFrame implements ActionListener {
     String[] choices   = {"", "Mr","Ms/Mrs"};
+    private JDateChooser date;
 
     int size = 15;
 
@@ -58,7 +60,9 @@ public class frmBooking3 extends JFrame implements ActionListener {
         panel.add(new JLabel("Email:"));
         panel.add(new JTextField(size));
         panel.add(new JLabel("Date of Birth:"));
-        panel.add(new JTextField(size));
+        date=new JDateChooser();
+        date.setDateFormatString("yyyy-MM-dd");
+        panel.add(date);
         panel.add(new JLabel("Mobile Number:"));
         panel.add(new JTextField(size));
         panel.add(new JLabel("Passport Number:"));

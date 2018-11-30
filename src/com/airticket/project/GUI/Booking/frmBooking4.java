@@ -47,7 +47,8 @@ public class frmBooking4 extends JFrame implements ActionListener {
 
     private JPanel createButtonPanel(){
         JPanel panel = new JPanel();
-        panel.add(createJButton("Finish"));
+        panel.add(createJButton("CONFIRM"));
+        panel.add(createJButton("Cancel"));
         return panel;
     }
 
