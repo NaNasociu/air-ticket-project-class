@@ -10,10 +10,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.border.EmptyBorder;
 
 public class frmBooking extends JFrame implements ActionListener {
-    private JTextField tf_temp, tf_temp2, tf_temp3, tf_temp4;
+    private JTextField tf_temp, tf_temp2, tf_temp3, tf_temp4, tf_time;
     private JComboBox jBoxAirport_in, jBoxAirport_out;
     String[] airport_in;
     String[] airport_out;
@@ -57,7 +58,7 @@ public class frmBooking extends JFrame implements ActionListener {
         panel.add(new JLabel("Destination:"));
         panel.add(jBoxAirport_out = new JComboBox(airport_out));
         panel.add(new JLabel("From:"));
-        panel.add(new JTextField(size));
+        panel.add(tf_time = new JTextField(size));
         return panel;
     }
 
@@ -71,11 +72,18 @@ public class frmBooking extends JFrame implements ActionListener {
         String command = evt.getActionCommand();
         if(command == "Search Flights"){
 
-            System.out.println(bookingDAO.convertNameToId(jBoxAirport_out.getSelectedItem().toString()));
-            System.out.println(bookingDAO.convertNameToId(jBoxAirport_in.getSelectedItem().toString()));
+            String airPortIn = bookingDAO.convertNameToId(jBoxAirport_out.getSelectedItem().toString());
+            String airPortOut = bookingDAO.convertNameToId(jBoxAirport_in.getSelectedItem().toString());
+            Date timeFlight = new Date();
+            System.out.println(airPortIn);
+            System.out.println(jBoxAirport_out.getSelectedItem().toString());
+            try {
+                frmBooking2 frmBooking2 = new frmBooking2(airPortIn, airPortOut, timeFlight);
+                setVisible(false);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
 
-            setVisible(false);
-            new frmBooking2();
         }
 
         if(command == "Cancel"){
