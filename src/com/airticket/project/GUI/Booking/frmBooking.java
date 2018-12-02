@@ -3,22 +3,22 @@ package com.airticket.project.GUI.Booking;
 import com.airticket.project.Controller.BookingDAO.Booking;
 import com.airticket.project.Controller.BookingDAO.BookingDAO;
 import com.airticket.project.GUI.Menu.frmMainPage;
+import com.toedter.calendar.JDateChooser;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.border.EmptyBorder;
 
 public class frmBooking extends JFrame implements ActionListener {
     private JTextField tf_temp, tf_temp2, tf_temp3, tf_temp4, tf_time;
     private JComboBox jBoxAirport_in, jBoxAirport_out;
+    private JDateChooser date;
     String[] airport_in;
     String[] airport_out;
-    String[] choices_2 = {"VND"};
     int size = 15;
     private BookingDAO bookingDAO = new BookingDAO();
     public frmBooking() throws SQLException {
@@ -58,7 +58,9 @@ public class frmBooking extends JFrame implements ActionListener {
         panel.add(new JLabel("Destination:"));
         panel.add(jBoxAirport_out = new JComboBox(airport_out));
         panel.add(new JLabel("From:"));
-        panel.add(tf_time = new JTextField(size));
+        date=new JDateChooser();
+        date.setDateFormatString("yyyy-MM-dd");
+        panel.add(date);
         return panel;
     }
 
@@ -90,11 +92,6 @@ public class frmBooking extends JFrame implements ActionListener {
             setVisible(false);
             new frmMainPage();
         }
-    }
-
-    private void clear(){
-        tf_temp.setText("");
-        tf_temp.requestFocus();
     }
 
     public static void main(String[] args) throws SQLException {

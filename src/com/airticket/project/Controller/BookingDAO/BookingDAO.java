@@ -2,11 +2,7 @@ package com.airticket.project.Controller.BookingDAO;
 
 import com.airticket.project.Connector.Connector;
 
-import java.lang.reflect.Array;
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -18,11 +14,6 @@ public class BookingDAO {
         Connector db = new Connector();
         String stmt = "call sp_show_option_data()";
         ResultSet rs = db.ExecuteSQLStatementWithResult(stmt);
-        Integer i = 0;
-        rs.beforeFirst();
-        rs.last();
-        String[] list = new String[rs.getRow()];
-        rs.beforeFirst();
         while (rs.next()) {
             String name = rs.getString("airport_name");
             String id = rs.getString("airport_id");

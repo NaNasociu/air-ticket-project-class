@@ -8,7 +8,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
-import java.util.Arrays;
 
 public class frmLogin extends JFrame implements ActionListener {
     private JTextField tf_username;
