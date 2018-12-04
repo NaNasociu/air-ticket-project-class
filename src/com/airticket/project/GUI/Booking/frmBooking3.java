@@ -10,7 +10,18 @@ import com.toedter.calendar.JDateChooser;
 
 public class frmBooking3 extends JFrame implements ActionListener {
     String[] choices   = {"", "Mr","Ms/Mrs"};
-    private JDateChooser date;
+    private JDateChooser birthdate, passportExipry;
+    private String selectedAirport_Id;
+
+    public String getSelectedAirport_Id() {
+        return selectedAirport_Id;
+    }
+
+    public void setSelectedAirport_Id(String selectedAirport_Id) {
+        System.out.println("Run here1123");
+        System.out.print(selectedAirport_Id);
+        this.selectedAirport_Id = selectedAirport_Id;
+    }
 
     int size = 15;
 
@@ -19,12 +30,11 @@ public class frmBooking3 extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
         setResizable(false);
-
         add(createMainPanel());
         add(createButtonPanel());
 
         pack();
-        setVisible(true);
+//        setVisible(true);
         setLocationRelativeTo(null);
     }
 
@@ -60,15 +70,17 @@ public class frmBooking3 extends JFrame implements ActionListener {
         panel.add(new JLabel("Email:"));
         panel.add(new JTextField(size));
         panel.add(new JLabel("Date of Birth:"));
-        date=new JDateChooser();
-        date.setDateFormatString("yyyy-MM-dd");
-        panel.add(date);
+        birthdate = new JDateChooser();
+        birthdate.setDateFormatString("yyyy-MM-dd");
+        panel.add(birthdate);
         panel.add(new JLabel("Mobile Number:"));
         panel.add(new JTextField(size));
         panel.add(new JLabel("Passport Number:"));
         panel.add(new JTextField(size));
         panel.add(new JLabel("Passport Expiry:"));
-        panel.add(new JTextField(size));
+        passportExipry = new JDateChooser();
+        passportExipry.setDateFormatString("yyyy-MM-dd");
+        panel.add(passportExipry);
         panel.add(new JLabel("Nationality:"));
         panel.add(new JTextField(size));
         return panel;

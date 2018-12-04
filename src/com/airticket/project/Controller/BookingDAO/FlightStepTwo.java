@@ -9,6 +9,15 @@ public class FlightStepTwo {
     private String economy;
     private String premium;
     private String business;
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public Date getFlightDate() {
         return flightDate;

@@ -7,23 +7,29 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.sql.SQLException;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 public class frmBooking2 extends JFrame implements ActionListener {
-    String[] columnNames = {"Flight Date", "Departs", "Arrives", "Flight Detail","Promo", "Eco","Skyboss"};
+    String[] columnNames = {"Id", "Flight Date", "Departs", "Arrives", "Flight Detail","Promo", "Eco","Skyboss"};
     Object [][] data = {};
     ArrayList<FlightStepTwo> flightList = new ArrayList<FlightStepTwo>();
     private DefaultTableModel tableModel = new DefaultTableModel();
     private String airport_in;
     private String airport_out;
+    private String selectedAirport_Id;
     private Date timeFlight;
+    private JTable table = new JTable();
     int size = 15;
+    private frmBooking3 step3 = new frmBooking3();
 
     public String getAirport_in() {
         return airport_in;
@@ -61,6 +67,7 @@ public class frmBooking2 extends JFrame implements ActionListener {
         pack();
         setVisible(true);
         setLocationRelativeTo(null);
+
     }
 
     public frmBooking2(String airportIn, String airportOut, Date time_Flight) throws SQLException {
@@ -79,6 +86,46 @@ public class frmBooking2 extends JFrame implements ActionListener {
         pack();
         setVisible(true);
         setLocationRelativeTo(null);
+
+        table.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int row = table.rowAtPoint(e.getPoint());
+                int col = table.columnAtPoint(e.getPoint());
+                int numcol = tableModel.getColumnCount();
+                String temp = (String)tableModel.getValueAt(row, 0);
+                step3.setSelectedAirport_Id(temp);
+                System.out.println("a");
+                System.out.println((String)tableModel.getValueAt(row, 0));
+//                for (int i = 0; i < numcol; i++) {
+//                    String temp = (String)tableModel.getValueAt(row, i);
+//                    System.out.print("temp");
+//                    System.out.println((String)tableModel.getValueAt(row, 0));
+//
+//                }
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
+
     }
 
     private JPanel createMainPanel() throws SQLException {
@@ -90,7 +137,7 @@ public class frmBooking2 extends JFrame implements ActionListener {
     }
 
     private JPanel createButtonPanel(){
-        JPanel panel = new JPanel(new GridLayout(2,1,5,5));
+        JPanel panel = new JPanel(new GridLayout(2,1,6,5));
         panel.add(createJButton("Continue"));
         panel.add(createJButton("Back"));
         return panel;
@@ -98,23 +145,20 @@ public class frmBooking2 extends JFrame implements ActionListener {
 
     private JPanel createInputPanel() throws SQLException {
         JPanel panel = new JPanel();
-        JTable table = new JTable();
         BookingDAO bookingDAO = new BookingDAO();
         tableModel.setColumnIdentifiers(columnNames);
         table.setModel(tableModel);
         flightList = bookingDAO.getFlightList(airport_in, airport_out, timeFlight);
-        System.out.println("1");
         for (FlightStepTwo temp: flightList) {
-            System.out.println("2");
             String rows[] = new String[6];
             Format formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-            rows[0] = formatter.format(temp.getFlightDate());
-            rows[1] = temp.getDeparts();
-            rows[2] = temp.getArrives();
-            rows[3] = temp.getEconomy();
-            rows[4] = temp.getPremium();
-            rows[5] = temp.getBusiness();
+            rows[0] = temp.getId();
+            rows[1] = formatter.format(temp.getFlightDate());
+            rows[2] = temp.getDeparts();
+            rows[3] = temp.getArrives();
+            rows[4] = temp.getEconomy();
+            rows[5] = temp.getPremium();
+//            rows[6] = temp.getBusiness();
             System.out.println(rows);
             tableModel.addRow(rows);
         }
@@ -132,9 +176,10 @@ public class frmBooking2 extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent evt){
         String command = evt.getActionCommand();
+        System.out.println(table.getSelectedRow());
         if(command == "Continue"){
             setVisible(false);
-            new frmBooking3();
+            step3.setVisible(true);
         }
 
         if(command == "Back"){

@@ -69,6 +69,7 @@ public class BookingDAO {
                 flightTemp.setBusiness(resultSet.getString("BUSINESS"));
                 flightTemp.setEconomy(resultSet.getString("ECONOMY"));
                 flightTemp.setPremium(resultSet.getString("PREMIUM"));
+                flightTemp.setId(resultSet.getString("FlightID"));
                 flightTemp.printAll();
                 flightList.add(flightTemp);
 
