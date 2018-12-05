@@ -58,7 +58,7 @@ public class frmBooking extends JFrame implements ActionListener {
         panel.add(new JLabel("Destination:"));
         panel.add(jBoxAirport_out = new JComboBox(airport_out));
         panel.add(new JLabel("From:"));
-        date=new JDateChooser();
+        date = new JDateChooser();
         date.setDateFormatString("yyyy-MM-dd");
         panel.add(date);
         return panel;
@@ -76,9 +76,8 @@ public class frmBooking extends JFrame implements ActionListener {
 
             String airPortIn = bookingDAO.convertNameToId(jBoxAirport_out.getSelectedItem().toString());
             String airPortOut = bookingDAO.convertNameToId(jBoxAirport_in.getSelectedItem().toString());
-            Date timeFlight = new Date();
-            System.out.println(airPortIn);
-            System.out.println(jBoxAirport_out.getSelectedItem().toString());
+            Date timeFlight = date.getMaxSelectableDate();
+            System.out.println(timeFlight);
             try {
                 frmBooking2 frmBooking2 = new frmBooking2(airPortIn, airPortOut, timeFlight);
                 setVisible(false);
