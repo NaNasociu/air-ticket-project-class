@@ -47,21 +47,17 @@ public class BookingDAO {
         Connector db = new Connector();
         Connection conn = db.getConnection();
         CallableStatement statement = conn.prepareCall("{call sp_search_flight_when_sale(?, ?, ?)}");
-        System.out.println(airportIn);
-        System.out.println(airportOut);
         statement.setString(1, airportIn);
         statement.setString(2, airportOut);
-//        statement.setDate(3, java.sql.Date.valueOf("2018-1-1"));
-        statement.setDate(3, (java.sql.Date) timeFrom);
+        statement.setDate(3, java.sql.Date.valueOf("2018-1-1"));
+//        statement.setDate(3, (java.sql.Date) timeFrom);
         boolean hadResults = statement.execute();
 
         while (hadResults) {
             ResultSet resultSet = statement.getResultSet();
             // process result set
-            System.out.print("11");
             while (resultSet.next()) {
                 // retrieve values of fields
-                System.out.print("22");
                 FlightStepTwo flightTemp = new FlightStepTwo();
                 flightTemp.setFlightDate(resultSet.getDate("flightDate"));
                 flightTemp.setArrives(resultSet.getString("Arrives"));

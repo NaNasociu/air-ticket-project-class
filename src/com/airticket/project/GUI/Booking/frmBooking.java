@@ -77,7 +77,8 @@ public class frmBooking extends JFrame implements ActionListener {
             String airPortIn = bookingDAO.convertNameToId(jBoxAirport_out.getSelectedItem().toString());
             String airPortOut = bookingDAO.convertNameToId(jBoxAirport_in.getSelectedItem().toString());
             Date timeFlight = date.getMaxSelectableDate();
-            System.out.println(timeFlight);
+//            Date timeFlight = new Date();
+//            System.out.println(timeFlight);
             try {
                 frmBooking2 frmBooking2 = new frmBooking2(airPortIn, airPortOut, timeFlight);
                 setVisible(false);

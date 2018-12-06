@@ -6,12 +6,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import javax.swing.border.EmptyBorder;
+
+import com.airticket.project.Controller.BookingDAO.Customers;
 import com.toedter.calendar.JDateChooser;
 
 public class frmBooking3 extends JFrame implements ActionListener {
     String[] choices   = {"", "Mr","Ms/Mrs"};
     private JDateChooser birthdate, passportExipry;
     private String selectedAirport_Id;
+    private JTextField tf_familyName, tf_middleName, tf_address, tf_city, tf_state, tf_email, tf_birthDate, tf_mobile, tf_passsport, tf_passportExpiry, tf_nationality;
 
     public String getSelectedAirport_Id() {
         return selectedAirport_Id;
@@ -58,31 +61,31 @@ public class frmBooking3 extends JFrame implements ActionListener {
         panel.add(new JLabel("Title:"));
         panel.add(new JComboBox(choices));
         panel.add(new JLabel("Family Name:"));
-        panel.add(new JTextField(size));
+        panel.add(tf_familyName = new JTextField(size));
         panel.add(new JLabel("Middle and Given Name:"));
-        panel.add(new JTextField(size));
+        panel.add(tf_middleName = new JTextField(size));
         panel.add(new JLabel("Address:"));
-        panel.add(new JTextField(size));
+        panel.add(tf_address = new JTextField(size));
         panel.add(new JLabel("City:"));
-        panel.add(new JTextField(size));
+        panel.add(tf_city = new JTextField(size));
         panel.add(new JLabel("Province/State:"));
-        panel.add(new JTextField(size));
+        panel.add(tf_state = new JTextField(size));
         panel.add(new JLabel("Email:"));
-        panel.add(new JTextField(size));
+        panel.add(tf_email = new JTextField(size));
         panel.add(new JLabel("Date of Birth:"));
         birthdate = new JDateChooser();
         birthdate.setDateFormatString("yyyy-MM-dd");
         panel.add(birthdate);
         panel.add(new JLabel("Mobile Number:"));
-        panel.add(new JTextField(size));
+        panel.add(tf_mobile = new JTextField(size));
         panel.add(new JLabel("Passport Number:"));
-        panel.add(new JTextField(size));
+        panel.add(tf_passsport = new JTextField(size));
         panel.add(new JLabel("Passport Expiry:"));
         passportExipry = new JDateChooser();
         passportExipry.setDateFormatString("yyyy-MM-dd");
         panel.add(passportExipry);
         panel.add(new JLabel("Nationality:"));
-        panel.add(new JTextField(size));
+        panel.add(tf_nationality = new JTextField(size));
         return panel;
     }
 
@@ -95,8 +98,21 @@ public class frmBooking3 extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent evt){
         String command = evt.getActionCommand();
         if(command == "Continue"){
+            Customers customers = new Customers();
+            customers.setFamilyName(tf_familyName.getText());
+            customers.setMiddleAndGivenName(tf_middleName.getText());
+            customers.setAddress(tf_address.getText());
+            customers.setCity(tf_city.getText());
+            customers.setEmail(tf_email.getText());
+            customers.setMobileNumber(tf_mobile.getText());
+            customers.setNationality(tf_nationality.getText());
+            customers.setPassportNumber(tf_passsport.getText());
+            customers.setState(tf_state.getText());
             setVisible(false);
-            new frmBooking4();
+            frmBooking4 frmBooking4 = new frmBooking4(customers);
+//            frmBooking4.setCustomers(customers);
+            frmBooking4.setFlightId(selectedAirport_Id);
+            frmBooking4.setVisible(true);
         }
 
         if(command == "Back"){

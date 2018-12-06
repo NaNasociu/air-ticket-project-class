@@ -1,5 +1,6 @@
 package com.airticket.project.GUI.Booking;
 
+import com.airticket.project.Controller.BookingDAO.Customers;
 import com.airticket.project.GUI.Menu.frmMainPage;
 
 import javax.swing.*;
@@ -9,7 +10,31 @@ import java.awt.event.ActionListener;
 
 public class frmBooking4 extends JFrame implements ActionListener {
 
-    public frmBooking4(){
+    private Customers customers;
+    private String flightId;
+
+    public Customers getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(Customers customers) {
+        System.out.println("Run here 12412125125");
+        System.out.print(customers.getAddress());
+        this.customers = customers;
+    }
+
+    public String getFlightId() {
+        return flightId;
+    }
+
+    public void setFlightId(String flightId) {
+        this.flightId = flightId;
+    }
+
+    public frmBooking4() {}
+
+    public frmBooking4(Customers customers){
+        this.customers = customers;
         setTitle("Booking - Summary");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridLayout(7,1,10,10));
@@ -40,7 +65,6 @@ public class frmBooking4 extends JFrame implements ActionListener {
         add(createButtonPanel());
 
         pack();
-        setVisible(true);
         setLocationRelativeTo(null);
     }
 
@@ -72,18 +96,19 @@ public class frmBooking4 extends JFrame implements ActionListener {
 
     private JPanel createContactPanel(){
         JPanel panel = new JPanel(new GridLayout(3,4,5,5));
+        System.out.print(customers.getAddress());
         panel.add(new JLabel("Name:",JLabel.CENTER));
-        panel.add(new JLabel("TanDepTrai"));
+        panel.add(new JLabel(customers.getFamilyName()));
         panel.add(new JLabel("Email:",JLabel.CENTER));
-        panel.add(new JLabel("test1@bede.com"));
+        panel.add(new JLabel(customers.getEmail()));
         panel.add(new JLabel("Address:",JLabel.CENTER));
-        panel.add(new JLabel("Hospital"));
+        panel.add(new JLabel(customers.getAddress()));
         panel.add(new JLabel("City:",JLabel.CENTER));
-        panel.add(new JLabel("Ho Chi Minh"));
+        panel.add(new JLabel(customers.getCity()));
         panel.add(new JLabel("Country:",JLabel.CENTER));
         panel.add(new JLabel("Vietnamese"));
         panel.add(new JLabel("Mobile Phone:",JLabel.CENTER));
-        panel.add(new JLabel("113"));
+        panel.add(new JLabel(customers.getMobileNumber()));
         return panel;
     }
 
