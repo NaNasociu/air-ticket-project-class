@@ -33,8 +33,9 @@ public class frmBooking4 extends JFrame implements ActionListener {
 
     public frmBooking4() {}
 
-    public frmBooking4(Customers customers){
+    public frmBooking4(Customers customers, String flightId){
         this.customers = customers;
+        this.flightId = flightId;
         setTitle("Booking - Summary");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridLayout(7,1,10,10));

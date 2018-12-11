@@ -10,6 +10,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+import java.sql.SQLOutput;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.border.EmptyBorder;
 
@@ -76,7 +79,8 @@ public class frmBooking extends JFrame implements ActionListener {
 
             String airPortIn = bookingDAO.convertNameToId(jBoxAirport_out.getSelectedItem().toString());
             String airPortOut = bookingDAO.convertNameToId(jBoxAirport_in.getSelectedItem().toString());
-            Date timeFlight = date.getMaxSelectableDate();
+//            java.sql.Date sqlDate = java.sql.Date.valueOf(date.getDate());
+            Date timeFlight = date.getDate();
 //            Date timeFlight = new Date();
 //            System.out.println(timeFlight);
             try {

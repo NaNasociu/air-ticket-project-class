@@ -95,14 +95,6 @@ public class frmBooking2 extends JFrame implements ActionListener {
                 int numcol = tableModel.getColumnCount();
                 String temp = (String)tableModel.getValueAt(row, 0);
                 step3.setSelectedAirport_Id(temp);
-                System.out.println("a");
-                System.out.println((String)tableModel.getValueAt(row, 0));
-//                for (int i = 0; i < numcol; i++) {
-//                    String temp = (String)tableModel.getValueAt(row, i);
-//                    System.out.print("temp");
-//                    System.out.println((String)tableModel.getValueAt(row, 0));
-//
-//                }
             }
 
             @Override

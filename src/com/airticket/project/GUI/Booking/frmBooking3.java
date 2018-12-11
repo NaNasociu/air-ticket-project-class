@@ -5,16 +5,19 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import javax.swing.border.EmptyBorder;
 
 import com.airticket.project.Controller.BookingDAO.Customers;
 import com.toedter.calendar.JDateChooser;
 
 public class frmBooking3 extends JFrame implements ActionListener {
-    String[] choices   = {"", "Mr","Ms/Mrs"};
+    String[] choices   = {"Mr","Ms/Mrs"};
     private JDateChooser birthdate, passportExipry;
+    private JComboBox jTitle;
     private String selectedAirport_Id;
-    private JTextField tf_familyName, tf_middleName, tf_address, tf_city, tf_state, tf_email, tf_birthDate, tf_mobile, tf_passsport, tf_passportExpiry, tf_nationality;
+    private JTextField tf_familyName, tf_middleName, tf_idCard, tf_address, tf_city, tf_state, tf_email, tf_birthDate, tf_mobile, tf_passsport, tf_passportExpiry, tf_nationality;
 
     public String getSelectedAirport_Id() {
         return selectedAirport_Id;
@@ -57,13 +60,15 @@ public class frmBooking3 extends JFrame implements ActionListener {
     }
 
     private JPanel createInputPanel(){
-        JPanel panel = new JPanel(new GridLayout(12,2,5,5));
+        JPanel panel = new JPanel(new GridLayout(13,2,5,5));
         panel.add(new JLabel("Title:"));
-        panel.add(new JComboBox(choices));
+        panel.add(jTitle = new JComboBox(choices));
         panel.add(new JLabel("Family Name:"));
         panel.add(tf_familyName = new JTextField(size));
         panel.add(new JLabel("Middle and Given Name:"));
         panel.add(tf_middleName = new JTextField(size));
+        panel.add(new JLabel("ID Card"));
+        panel.add(tf_idCard = new JTextField(size));
         panel.add(new JLabel("Address:"));
         panel.add(tf_address = new JTextField(size));
         panel.add(new JLabel("City:"));
@@ -99,6 +104,11 @@ public class frmBooking3 extends JFrame implements ActionListener {
         String command = evt.getActionCommand();
         if(command == "Continue"){
             Customers customers = new Customers();
+            if (jTitle.getSelectedItem() == "Mr") {
+                customers.setSex(true);
+            } else {
+                customers.setSex(false);
+            }
             customers.setFamilyName(tf_familyName.getText());
             customers.setMiddleAndGivenName(tf_middleName.getText());
             customers.setAddress(tf_address.getText());
@@ -108,10 +118,16 @@ public class frmBooking3 extends JFrame implements ActionListener {
             customers.setNationality(tf_nationality.getText());
             customers.setPassportNumber(tf_passsport.getText());
             customers.setState(tf_state.getText());
+            customers.setIdCard(tf_idCard.getText());
+            customers.setBirthdate(birthdate.getDate());
+            customers.setPassportExpiry(passportExipry.getDate());
+            try {
+                customers.createCustomer();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
             setVisible(false);
-            frmBooking4 frmBooking4 = new frmBooking4(customers);
-//            frmBooking4.setCustomers(customers);
-            frmBooking4.setFlightId(selectedAirport_Id);
+            frmBooking4 frmBooking4 = new frmBooking4(customers, selectedAirport_Id);
             frmBooking4.setVisible(true);
         }
 
