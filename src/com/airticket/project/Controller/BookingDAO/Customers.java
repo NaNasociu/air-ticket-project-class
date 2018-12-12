@@ -20,34 +20,36 @@ public class Customers {
     private String passportExpiry;
     private String nationality;
     private String idCard;
-    private Boolean sex;
+    private int sex;
 
 
     public void createCustomer() throws SQLException {
         Connector db = new Connector();
         Connection conn = db.getConnection();
-        CallableStatement statement = conn.prepareCall("{call sp_add_new_customer(?,?,?,?,?,?,?,?,?,?,?,?,?}");
+        CallableStatement statement = conn.prepareCall("{call sp_add_new_customer(?,?,?,?,?,?,?,?,?,?,?,?,?)}");
         statement.setString(1,  this.idCard);
         statement.setString(2, this.passportNumber);
         statement.setString(3, this.passportExpiry);
         statement.setString(4, this.familyName);
         statement.setString(5, this.middleAndGivenName);
         statement.setString(6, this.birthdate);
-        statement.setString(7, String.valueOf(this.sex));
+        statement.setInt(7, this.sex);
         statement.setString(8, this.mobileNumber);
         statement.setString(9, this.email);
         statement.setString(10, this.address);
-        statement.setString(11, this.state);
+        statement.setString(11, this.city);
         statement.setString(12, this.nationality);
         statement.setString(13, "CT1");
-        statement.execute();
+
+        boolean hadResults = statement.execute();
+        System.out.println(hadResults);
     }
 
-    public Boolean getSex() {
+    public int getSex() {
         return sex;
     }
 
-    public void setSex(Boolean sex) {
+    public void setSex(int sex) {
         this.sex = sex;
     }
 
