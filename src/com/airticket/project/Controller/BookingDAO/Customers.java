@@ -29,7 +29,7 @@ public class Customers {
         CallableStatement statement = conn.prepareCall("{call sp_add_new_customer(?,?,?,?,?,?,?,?,?,?,?,?,?}");
         statement.setString(1,  this.idCard);
         statement.setString(2, this.passportNumber);
-        System.out.print(this.passportExpiry);
+        System.out.print(this.passportExpiry    );
         statement.setDate(3, (java.sql.Date) this.passportExpiry);
         statement.setString(4, this.familyName);
         statement.setString(5, this.middleAndGivenName);
