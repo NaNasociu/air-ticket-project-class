@@ -109,6 +109,7 @@ public class frmBooking3 extends JFrame implements ActionListener {
             } else {
                 customers.setSex(false);
             }
+            DateFormat df= new SimpleDateFormat("yyyy-MM-dd");
             customers.setFamilyName(tf_familyName.getText());
             customers.setMiddleAndGivenName(tf_middleName.getText());
             customers.setAddress(tf_address.getText());
@@ -119,8 +120,8 @@ public class frmBooking3 extends JFrame implements ActionListener {
             customers.setPassportNumber(tf_passsport.getText());
             customers.setState(tf_state.getText());
             customers.setIdCard(tf_idCard.getText());
-            customers.setBirthdate(birthdate.getDate());
-            customers.setPassportExpiry(passportExipry.getDate());
+            customers.setBirthdate(df.format(birthdate.getDate()));
+            customers.setPassportExpiry(df.format(passportExipry.getDate()));
             try {
                 customers.createCustomer();
             } catch (SQLException e) {

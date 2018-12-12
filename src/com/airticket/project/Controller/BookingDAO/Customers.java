@@ -14,10 +14,10 @@ public class Customers {
     private String city;
     private String state;
     private String email;
-    private Date birthdate;
+    private String birthdate;
     private String passportNumber;
     private String mobileNumber;
-    private Date passportExpiry;
+    private String passportExpiry;
     private String nationality;
     private String idCard;
     private Boolean sex;
@@ -29,19 +29,18 @@ public class Customers {
         CallableStatement statement = conn.prepareCall("{call sp_add_new_customer(?,?,?,?,?,?,?,?,?,?,?,?,?}");
         statement.setString(1,  this.idCard);
         statement.setString(2, this.passportNumber);
-        System.out.print(this.passportExpiry    );
-        statement.setDate(3, (java.sql.Date) this.passportExpiry);
+        statement.setString(3, this.passportExpiry);
         statement.setString(4, this.familyName);
         statement.setString(5, this.middleAndGivenName);
-        statement.setDate(6, (java.sql.Date) this.birthdate);
+        statement.setString(6, this.birthdate);
         statement.setString(7, String.valueOf(this.sex));
         statement.setString(8, this.mobileNumber);
         statement.setString(9, this.email);
         statement.setString(10, this.address);
         statement.setString(11, this.state);
         statement.setString(12, this.nationality);
-        statement.setString(13, "VIP");
-        boolean hadResults = statement.execute();
+        statement.setString(13, "CT1");
+        statement.execute();
     }
 
     public Boolean getSex() {
@@ -108,11 +107,11 @@ public class Customers {
         this.email = email;
     }
 
-    public Date getBirthdate() {
+    public String getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(Date birthdate) {
+    public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
     }
 
@@ -132,11 +131,11 @@ public class Customers {
         this.mobileNumber = mobileNumber;
     }
 
-    public Date getPassportExpiry() {
+    public String getPassportExpiry() {
         return passportExpiry;
     }
 
-    public void setPassportExpiry(Date passportExpiry) {
+    public void setPassportExpiry(String passportExpiry) {
         this.passportExpiry = passportExpiry;
     }
 

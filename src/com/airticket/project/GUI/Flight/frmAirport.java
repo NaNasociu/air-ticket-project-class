@@ -16,7 +16,7 @@ public class frmAirport extends JFrame {
         setTitle("Airport");
         setSize(1600,900);
         setLayout(new FlowLayout());
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         add(inputPanel());
         add(tablePanel());
