@@ -105,9 +105,9 @@ public class frmBooking3 extends JFrame implements ActionListener {
         if(command == "Continue"){
             Customers customers = new Customers();
             if (jTitle.getSelectedItem() == "Mr") {
-                customers.setSex(true);
+                customers.setSex(0);
             } else {
-                customers.setSex(false);
+                customers.setSex(1);
             }
             DateFormat df= new SimpleDateFormat("yyyy-MM-dd");
             customers.setFamilyName(tf_familyName.getText());
