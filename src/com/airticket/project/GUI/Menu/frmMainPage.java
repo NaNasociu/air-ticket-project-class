@@ -1,6 +1,7 @@
 package com.airticket.project.GUI.Menu;
 
 import com.airticket.project.GUI.Booking.frmBooking;
+import com.airticket.project.GUI.Checking.CheckingCode;
 import com.airticket.project.GUI.Flight.*;
 
 import javax.swing.*;
@@ -23,7 +24,7 @@ public class frmMainPage extends JFrame implements ActionListener {
 
         //create label
         btn1 = createJButton("Booking", Color.red, Color.pink);
-        btn2 = createJButton("Airport", Color.red, Color.yellow);
+        btn2 = createJButton("Checking", Color.red, Color.yellow);
         btn3 = createJButton("Function 3", Color.red, Color.cyan);
         btn4 = createJButton("Function 4", Color.red, Color.gray);
         JLabel lb5 = new JLabel("icon", icon, JLabel.CENTER);
@@ -56,6 +57,15 @@ public class frmMainPage extends JFrame implements ActionListener {
             setVisible(false);
             try {
                 new frmBooking();
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        }
+
+        if (command == "Checking") {
+            setVisible(false);
+            try {
+                new CheckingCode();
             } catch (Exception e1) {
                 e1.printStackTrace();
             }

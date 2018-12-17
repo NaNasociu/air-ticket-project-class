@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef63ef44-7713-4b06-819f-33408bd65073" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/airticket/project/Controller/CheckingCode/CheckingCodeDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/airticket/project/GUI/Checking/CheckingCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/air-ticket-project-class.iml" beforeDir="false" afterPath="$PROJECT_DIR$/air-ticket-project-class.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/airticket/project/Controller/BookingDAO/Customers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/airticket/project/Controller/BookingDAO/Customers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/airticket/project/GUI/Menu/frmMainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/airticket/project/GUI/Menu/frmMainPage.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,7 +30,7 @@
           <entry key="form" value="13" />
           <entry key="gitignore" value="2" />
           <entry key="iml" value="3" />
-          <entry key="java" value="108" />
+          <entry key="java" value="114" />
           <entry key="jrxml" value="1" />
           <entry key="md" value="1" />
           <entry key="project" value="1" />
@@ -41,7 +42,7 @@
           <entry key="Eclipse" value="1" />
           <entry key="GUI_DESIGNER_FORM" value="13" />
           <entry key="IDEA_MODULE" value="3" />
-          <entry key="JAVA" value="107" />
+          <entry key="JAVA" value="113" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="Scratch" value="1" />
           <entry key="XML" value="2" />
@@ -49,14 +50,14 @@
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="25" />
+          <entry key="project.closed" value="28" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="2" />
-          <entry key="project.open.time.13" value="3" />
+          <entry key="project.open.time.13" value="5" />
           <entry key="project.open.time.14" value="5" />
-          <entry key="project.open.time.15" value="2" />
+          <entry key="project.open.time.15" value="3" />
           <entry key="project.open.time.16" value="3" />
           <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.18" value="3" />
@@ -65,23 +66,24 @@
           <entry key="project.open.time.20" value="3" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="37" />
+          <entry key="project.opened" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="4" />
+          <entry key="dummy" value="7" />
           <entry key="gitignore" value="16" />
-          <entry key="java" value="7065" />
+          <entry key="java" value="8154" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="7065" />
-          <entry key="PLAIN_TEXT" value="20" />
+          <entry key="JAVA" value="8154" />
+          <entry key="PLAIN_TEXT" value="23" />
         </counts>
       </usages-collector>
     </session>
@@ -172,109 +174,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Booking/frmBooking3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-560">
-              <caret line="80" column="59" lean-forward="true" selection-start-line="80" selection-start-column="59" selection-end-line="80" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Booking/frmBooking4.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1340">
-              <caret line="81" selection-start-line="81" selection-end-line="81" />
-              <folding>
-                <element signature="e#705#706#0" expanded="true" />
-                <element signature="e#736#737#0" expanded="true" />
-                <element signature="e#784#785#0" expanded="true" />
-                <element signature="e#824#825#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/airticket/project/Controller/BookingDAO/Customers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1600#1601#0" expanded="true" />
-                <element signature="e#1626#1627#0" expanded="true" />
-                <element signature="e#1665#1666#0" expanded="true" />
-                <element signature="e#1695#1696#0" expanded="true" />
-                <element signature="e#1728#1729#0" expanded="true" />
-                <element signature="e#1757#1758#0" expanded="true" />
-                <element signature="e#1801#1802#0" expanded="true" />
-                <element signature="e#1837#1838#0" expanded="true" />
-                <element signature="e#1874#1875#0" expanded="true" />
-                <element signature="e#1907#1908#0" expanded="true" />
-                <element signature="e#1959#1960#0" expanded="true" />
-                <element signature="e#2003#2004#0" expanded="true" />
-                <element signature="e#2048#2049#0" expanded="true" />
-                <element signature="e#2089#2090#0" expanded="true" />
-                <element signature="e#2157#2158#0" expanded="true" />
-                <element signature="e#2217#2218#0" expanded="true" />
-                <element signature="e#2251#2252#0" expanded="true" />
-                <element signature="e#2281#2282#0" expanded="true" />
-                <element signature="e#2327#2328#0" expanded="true" />
-                <element signature="e#2365#2366#0" expanded="true" />
-                <element signature="e#2396#2397#0" expanded="true" />
-                <element signature="e#2423#2424#0" expanded="true" />
-                <element signature="e#2463#2464#0" expanded="true" />
-                <element signature="e#2495#2496#0" expanded="true" />
-                <element signature="e#2527#2528#0" expanded="true" />
-                <element signature="e#2555#2556#0" expanded="true" />
-                <element signature="e#2597#2598#0" expanded="true" />
-                <element signature="e#2631#2632#0" expanded="true" />
-                <element signature="e#2663#2664#0" expanded="true" />
-                <element signature="e#2691#2692#0" expanded="true" />
-                <element signature="e#2733#2734#0" expanded="true" />
-                <element signature="e#2767#2768#0" expanded="true" />
-                <element signature="e#2803#2804#0" expanded="true" />
-                <element signature="e#2835#2836#0" expanded="true" />
-                <element signature="e#2885#2886#0" expanded="true" />
-                <element signature="e#2927#2928#0" expanded="true" />
-                <element signature="e#2968#2969#0" expanded="true" />
-                <element signature="e#3005#3006#0" expanded="true" />
-                <element signature="e#3065#3066#0" expanded="true" />
-                <element signature="e#3117#3118#0" expanded="true" />
-                <element signature="e#3156#3157#0" expanded="true" />
-                <element signature="e#3191#3192#0" expanded="true" />
-                <element signature="e#3247#3248#0" expanded="true" />
-                <element signature="e#3295#3296#0" expanded="true" />
-                <element signature="e#3336#3337#0" expanded="true" />
-                <element signature="e#3373#3374#0" expanded="true" />
-                <element signature="e#3433#3434#0" expanded="true" />
-                <element signature="e#3485#3486#0" expanded="true" />
-                <element signature="e#3523#3524#0" expanded="true" />
-                <element signature="e#3557#3558#0" expanded="true" />
-                <element signature="e#3611#3612#0" expanded="true" />
-                <element signature="e#3657#3658#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/airticket/project/Controller/LoginDAO/LoginDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="48" column="32" lean-forward="true" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Flight/frmFlight.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
-              <folding>
-                <element signature="e#4840#4984#0" expanded="true" />
-                <element signature="e#4983#4984#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1360">
+              <caret line="80" column="39" selection-start-line="80" selection-start-column="39" selection-end-line="80" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -282,10 +183,76 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Menu/frmMainPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
-              <caret line="57" column="33" lean-forward="true" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
+            <state relative-caret-position="1180">
+              <caret line="67" column="35" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Checking/CheckingCode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="70" column="17" lean-forward="true" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/airticket/project/Controller/CheckingCode/CheckingCodeDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="460">
+              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#536#537#0" expanded="true" />
+                <element signature="e#564#565#0" expanded="true" />
+                <element signature="e#1690#1691#0" expanded="true" />
+                <element signature="e#1719#1720#0" expanded="true" />
+                <element signature="e#1763#1764#0" expanded="true" />
+                <element signature="e#1799#1800#0" expanded="true" />
+                <element signature="e#1834#1835#0" expanded="true" />
+                <element signature="e#1865#1866#0" expanded="true" />
+                <element signature="e#1898#1899#0" expanded="true" />
+                <element signature="e#1927#1928#0" expanded="true" />
+                <element signature="e#1963#1964#0" expanded="true" />
+                <element signature="e#1997#1998#0" expanded="true" />
+                <element signature="e#2028#2029#0" expanded="true" />
+                <element signature="e#2055#2056#0" expanded="true" />
+                <element signature="e#2088#2089#0" expanded="true" />
+                <element signature="e#2117#2118#0" expanded="true" />
+                <element signature="e#2154#2155#0" expanded="true" />
+                <element signature="e#2187#2188#0" expanded="true" />
+                <element signature="e#2222#2223#0" expanded="true" />
+                <element signature="e#2253#2254#0" expanded="true" />
+                <element signature="e#2288#2289#0" expanded="true" />
+                <element signature="e#2319#2320#0" expanded="true" />
+                <element signature="e#2358#2359#0" expanded="true" />
+                <element signature="e#2393#2394#0" expanded="true" />
+                <element signature="e#2441#2442#0" expanded="true" />
+                <element signature="e#2481#2482#0" expanded="true" />
+                <element signature="e#2525#2526#0" expanded="true" />
+                <element signature="e#2561#2562#0" expanded="true" />
+                <element signature="e#2613#2614#0" expanded="true" />
+                <element signature="e#2659#2660#0" expanded="true" />
+                <element signature="e#2699#2700#0" expanded="true" />
+                <element signature="e#2731#2732#0" expanded="true" />
+                <element signature="e#2775#2776#0" expanded="true" />
+                <element signature="e#2811#2812#0" expanded="true" />
+                <element signature="e#2863#2864#0" expanded="true" />
+                <element signature="e#2907#2908#0" expanded="true" />
+                <element signature="e#2955#2956#0" expanded="true" />
+                <element signature="e#2995#2996#0" expanded="true" />
+                <element signature="e#3043#3044#0" expanded="true" />
+                <element signature="e#3083#3084#0" expanded="true" />
+                <element signature="e#3139#3140#0" expanded="true" />
+                <element signature="e#3187#3188#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -294,33 +261,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/airticket/project/Controller/BookingDAO/BookingDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="61" column="58" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="58" />
+            <state relative-caret-position="475">
+              <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/airticket/project/Controller/BookingDAO/FlightStepTwo.java">
+        <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Booking/frmBooking2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-              <folding>
-                <element signature="e#327#328#0" expanded="true" />
-                <element signature="e#352#353#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/airticket/project/Connector/Connector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="3080">
+              <caret line="182" column="13" selection-start-line="177" selection-start-column="12" selection-end-line="182" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -353,6 +304,7 @@
       <find>l9</find>
       <find>l10</find>
       <find>setTitle</find>
+      <find>CheckingCode</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -361,7 +313,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/demo.form" />
         <option value="$PROJECT_DIR$/src/com/airticket/project/Login/LoginPage.form" />
         <option value="$PROJECT_DIR$/src/com/airticket/project/Login/LoginPage.java" />
         <option value="$PROJECT_DIR$/air-ticket-project-class.iml" />
@@ -409,6 +360,10 @@
         <option value="$PROJECT_DIR$/src/com/airticket/project/GUI/Booking/frmBooking3.java" />
         <option value="$PROJECT_DIR$/src/com/airticket/project/GUI/Booking/frmBooking.java" />
         <option value="$PROJECT_DIR$/src/com/airticket/project/Controller/BookingDAO/Customers.java" />
+        <option value="$PROJECT_DIR$/src/com/airticket/project/GUI/Menu/frmMainPage.java" />
+        <option value="$PROJECT_DIR$/src/com/airticket/project/GUI/Checking/CheckingCode.java" />
+        <option value="$PROJECT_DIR$/src/com/airticket/project/Controller/CheckingCode/CheckingCode.java" />
+        <option value="$PROJECT_DIR$/src/com/airticket/project/Controller/CheckingCode/CheckingCodeDAO.java" />
       </list>
     </option>
   </component>
@@ -437,7 +392,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-20" />
-    <option name="y" value="12" />
+    <option name="y" value="10" />
     <option name="width" value="990" />
     <option name="height" value="1030" />
   </component>
@@ -449,6 +404,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -480,15 +436,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="Controller" type="462c0819:PsiDirectoryNode" />
-              <item name="BookingDAO" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="air-ticket-project-class" type="b2602c69:ProjectViewProjectNode" />
-              <item name="air-ticket-project-class" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-              <item name="LoginDAO" type="462c0819:PsiDirectoryNode" />
+              <item name="CheckingCode" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="air-ticket-project-class" type="b2602c69:ProjectViewProjectNode" />
@@ -503,44 +451,19 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="Booking" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="air-ticket-project-class" type="b2602c69:ProjectViewProjectNode" />
-              <item name="air-ticket-project-class" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="Flight" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="air-ticket-project-class" type="b2602c69:ProjectViewProjectNode" />
-              <item name="air-ticket-project-class" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="Login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="air-ticket-project-class" type="b2602c69:ProjectViewProjectNode" />
-              <item name="air-ticket-project-class" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="Menu" type="462c0819:PsiDirectoryNode" />
+              <item name="Checking" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="256" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544500755624" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544920584432" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/connector/jasperreports-6.7.0.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -671,10 +594,39 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.3852459" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1818792" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932885" weight="0.32707775" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49731544" visible="true" weight="0.2546917" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5026846" side_tool="true" weight="0.25637394" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49798658" weight="0.3186969" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.3295302" />
+      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.3295302" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23288591" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -701,21 +653,12 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.3295302" />
       <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.3295302" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/testForm/testForm.java" />
-    <entry file="file://$PROJECT_DIR$/src/main.java" />
     <entry file="file://$PROJECT_DIR$/src/com/airticket/project/main/testForm/test.java" />
     <entry file="file://$PROJECT_DIR$/src/com/airticket/project/main/main.java" />
     <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/testForm.java" />
@@ -827,23 +770,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/Controller/BookingDAO/FlightStepTwo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-          <folding>
-            <element signature="e#352#353#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Booking/frmBooking2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="97" selection-start-line="97" selection-end-line="97" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/Calendar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -851,23 +777,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Booking/frmBooking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1340">
-          <caret line="81" selection-start-line="81" selection-end-line="81" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/airticket/project/Controller/BookingDAO/FlightStepFour.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="1" selection-start-column="1" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -878,158 +791,141 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Booking/frmBooking.java">
+    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Flight/frmFlight.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/Controller/LoginDAO/LoginDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="720">
+          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/Controller/BookingDAO/BookingDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/Controller/BookingDAO/FlightStepTwo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="61" column="58" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Booking/frmBooking4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-560">
-          <caret line="80" column="59" lean-forward="true" selection-start-line="80" selection-start-column="59" selection-end-line="80" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/Controller/BookingDAO/BookingDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
-          <folding>
-            <element signature="e#327#328#0" expanded="true" />
-            <element signature="e#352#353#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Menu/frmMainPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="57" column="33" lean-forward="true" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="260">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/airticket/project/Connector/Connector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="53" />
+        <state relative-caret-position="440">
+          <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Flight/frmFlight.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/Controller/LoginDAO/LoginDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="48" column="32" lean-forward="true" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Booking/frmBooking4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
-          <folding>
-            <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#736#737#0" expanded="true" />
-            <element signature="e#784#785#0" expanded="true" />
-            <element signature="e#824#825#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Booking/frmBooking3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="109" column="30" selection-start-line="109" selection-start-column="30" selection-end-line="109" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#850#851#0" expanded="true" />
-            <element signature="e#891#892#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/airticket/project/Controller/BookingDAO/Customers.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="96" column="21" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Booking/frmBooking4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Booking/frmBooking.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
-          <caret line="40" column="50" lean-forward="true" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+          <caret line="39" column="36" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="39" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Booking/frmBooking3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="80" column="39" selection-start-line="80" selection-start-column="39" selection-end-line="80" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Menu/frmMainPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1180">
+          <caret line="67" column="35" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1600#1601#0" expanded="true" />
-            <element signature="e#1626#1627#0" expanded="true" />
-            <element signature="e#1665#1666#0" expanded="true" />
-            <element signature="e#1695#1696#0" expanded="true" />
-            <element signature="e#1728#1729#0" expanded="true" />
-            <element signature="e#1757#1758#0" expanded="true" />
-            <element signature="e#1801#1802#0" expanded="true" />
-            <element signature="e#1837#1838#0" expanded="true" />
-            <element signature="e#1874#1875#0" expanded="true" />
-            <element signature="e#1907#1908#0" expanded="true" />
-            <element signature="e#1959#1960#0" expanded="true" />
-            <element signature="e#2003#2004#0" expanded="true" />
-            <element signature="e#2048#2049#0" expanded="true" />
-            <element signature="e#2089#2090#0" expanded="true" />
-            <element signature="e#2157#2158#0" expanded="true" />
-            <element signature="e#2217#2218#0" expanded="true" />
-            <element signature="e#2251#2252#0" expanded="true" />
-            <element signature="e#2281#2282#0" expanded="true" />
-            <element signature="e#2327#2328#0" expanded="true" />
-            <element signature="e#2365#2366#0" expanded="true" />
-            <element signature="e#2396#2397#0" expanded="true" />
-            <element signature="e#2423#2424#0" expanded="true" />
-            <element signature="e#2463#2464#0" expanded="true" />
-            <element signature="e#2495#2496#0" expanded="true" />
-            <element signature="e#2527#2528#0" expanded="true" />
-            <element signature="e#2555#2556#0" expanded="true" />
-            <element signature="e#2597#2598#0" expanded="true" />
-            <element signature="e#2631#2632#0" expanded="true" />
-            <element signature="e#2663#2664#0" expanded="true" />
-            <element signature="e#2691#2692#0" expanded="true" />
-            <element signature="e#2733#2734#0" expanded="true" />
-            <element signature="e#2767#2768#0" expanded="true" />
-            <element signature="e#2803#2804#0" expanded="true" />
-            <element signature="e#2835#2836#0" expanded="true" />
-            <element signature="e#2885#2886#0" expanded="true" />
-            <element signature="e#2927#2928#0" expanded="true" />
-            <element signature="e#2968#2969#0" expanded="true" />
-            <element signature="e#3005#3006#0" expanded="true" />
-            <element signature="e#3065#3066#0" expanded="true" />
-            <element signature="e#3117#3118#0" expanded="true" />
-            <element signature="e#3156#3157#0" expanded="true" />
-            <element signature="e#3191#3192#0" expanded="true" />
-            <element signature="e#3247#3248#0" expanded="true" />
-            <element signature="e#3295#3296#0" expanded="true" />
-            <element signature="e#3336#3337#0" expanded="true" />
-            <element signature="e#3373#3374#0" expanded="true" />
-            <element signature="e#3433#3434#0" expanded="true" />
-            <element signature="e#3485#3486#0" expanded="true" />
-            <element signature="e#3523#3524#0" expanded="true" />
-            <element signature="e#3557#3558#0" expanded="true" />
-            <element signature="e#3611#3612#0" expanded="true" />
-            <element signature="e#3657#3658#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Booking/frmBooking2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3080">
+          <caret line="182" column="13" selection-start-line="177" selection-start-column="12" selection-end-line="182" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/Controller/BookingDAO/BookingDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/Controller/CheckingCode/CheckingCodeDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#536#537#0" expanded="true" />
+            <element signature="e#564#565#0" expanded="true" />
+            <element signature="e#1690#1691#0" expanded="true" />
+            <element signature="e#1719#1720#0" expanded="true" />
+            <element signature="e#1763#1764#0" expanded="true" />
+            <element signature="e#1799#1800#0" expanded="true" />
+            <element signature="e#1834#1835#0" expanded="true" />
+            <element signature="e#1865#1866#0" expanded="true" />
+            <element signature="e#1898#1899#0" expanded="true" />
+            <element signature="e#1927#1928#0" expanded="true" />
+            <element signature="e#1963#1964#0" expanded="true" />
+            <element signature="e#1997#1998#0" expanded="true" />
+            <element signature="e#2028#2029#0" expanded="true" />
+            <element signature="e#2055#2056#0" expanded="true" />
+            <element signature="e#2088#2089#0" expanded="true" />
+            <element signature="e#2117#2118#0" expanded="true" />
+            <element signature="e#2154#2155#0" expanded="true" />
+            <element signature="e#2187#2188#0" expanded="true" />
+            <element signature="e#2222#2223#0" expanded="true" />
+            <element signature="e#2253#2254#0" expanded="true" />
+            <element signature="e#2288#2289#0" expanded="true" />
+            <element signature="e#2319#2320#0" expanded="true" />
+            <element signature="e#2358#2359#0" expanded="true" />
+            <element signature="e#2393#2394#0" expanded="true" />
+            <element signature="e#2441#2442#0" expanded="true" />
+            <element signature="e#2481#2482#0" expanded="true" />
+            <element signature="e#2525#2526#0" expanded="true" />
+            <element signature="e#2561#2562#0" expanded="true" />
+            <element signature="e#2613#2614#0" expanded="true" />
+            <element signature="e#2659#2660#0" expanded="true" />
+            <element signature="e#2699#2700#0" expanded="true" />
+            <element signature="e#2731#2732#0" expanded="true" />
+            <element signature="e#2775#2776#0" expanded="true" />
+            <element signature="e#2811#2812#0" expanded="true" />
+            <element signature="e#2863#2864#0" expanded="true" />
+            <element signature="e#2907#2908#0" expanded="true" />
+            <element signature="e#2955#2956#0" expanded="true" />
+            <element signature="e#2995#2996#0" expanded="true" />
+            <element signature="e#3043#3044#0" expanded="true" />
+            <element signature="e#3083#3084#0" expanded="true" />
+            <element signature="e#3139#3140#0" expanded="true" />
+            <element signature="e#3187#3188#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/airticket/project/GUI/Checking/CheckingCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="70" column="17" lean-forward="true" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
