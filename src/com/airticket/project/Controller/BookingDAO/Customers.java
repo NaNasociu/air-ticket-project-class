@@ -33,7 +33,7 @@ public class Customers {
         statement.setString(4, this.familyName);
         statement.setString(5, this.middleAndGivenName);
         statement.setString(6, this.birthdate);
-        statement.setInt(7, this.sex);
+        statement.setInt(7, 1);
         statement.setString(8, this.mobileNumber);
         statement.setString(9, this.email);
         statement.setString(10, this.address);

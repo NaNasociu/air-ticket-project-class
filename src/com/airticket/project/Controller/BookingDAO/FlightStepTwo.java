@@ -10,6 +10,15 @@ public class FlightStepTwo {
     private String premium;
     private String business;
     private String id;
+    private String start_time;
+
+    public String getStart_time() {
+        return start_time;
+    }
+
+    public void setStart_time(String start_time) {
+        this.start_time = start_time;
+    }
 
     public String getId() {
         return id;

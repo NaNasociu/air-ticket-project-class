@@ -128,8 +128,14 @@ public class frmBooking3 extends JFrame implements ActionListener {
                 e.printStackTrace();
             }
             setVisible(false);
-            frmBooking4 frmBooking4 = new frmBooking4(customers, selectedAirport_Id);
-            frmBooking4.setVisible(true);
+            frmBooking4 frmBooking4;
+            try {
+                frmBooking4 = new frmBooking4(customers, selectedAirport_Id);
+                frmBooking4.setVisible(true);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
 
         if(command == "Back"){

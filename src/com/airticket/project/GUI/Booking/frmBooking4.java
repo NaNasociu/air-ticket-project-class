@@ -1,24 +1,29 @@
 package com.airticket.project.GUI.Booking;
 
 import com.airticket.project.Controller.BookingDAO.Customers;
+import com.airticket.project.Controller.BookingDAO.FlightStepFour;
+import com.airticket.project.Controller.BookingDAO.FlightStepTwo;
 import com.airticket.project.GUI.Menu.frmMainPage;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class frmBooking4 extends JFrame implements ActionListener {
 
     private Customers customers;
     private String flightId;
+    private FlightStepFour flightStepFour;
+    private FlightStepTwo flightStepTwo;
+    private FlightStepTwo flightInfo;
 
     public Customers getCustomers() {
         return customers;
     }
 
     public void setCustomers(Customers customers) {
-        System.out.println("Run here 12412125125");
         System.out.print(customers.getAddress());
         this.customers = customers;
     }
@@ -33,9 +38,13 @@ public class frmBooking4 extends JFrame implements ActionListener {
 
     public frmBooking4() {}
 
-    public frmBooking4(Customers customers, String flightId){
+    public frmBooking4(Customers customers, String flightId) throws SQLException {
         this.customers = customers;
         this.flightId = flightId;
+        System.out.print("Run hereabcd12");
+        flightStepFour = new FlightStepFour(customers, flightId);
+        flightInfo = flightStepFour.getFligtInfo();
+        System.out.print("Run hereabcd");
         setTitle("Booking - Summary");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridLayout(7,1,10,10));
@@ -67,6 +76,7 @@ public class frmBooking4 extends JFrame implements ActionListener {
 
         pack();
         setLocationRelativeTo(null);
+        setVisible(true);
     }
 
 
@@ -80,17 +90,17 @@ public class frmBooking4 extends JFrame implements ActionListener {
     private JPanel createFlightPanel(){
         JPanel panel = new JPanel(new GridLayout(3,4,5,5));
         panel.add(new JLabel("From:",JLabel.CENTER));
-        panel.add(new JLabel("Biên Hòa"));
+        panel.add(new JLabel(flightInfo.getDeparts()));
         panel.add(new JLabel("To:",JLabel.CENTER));
-        panel.add(new JLabel("Chợ Rẫy"));
+        panel.add(new JLabel(flightInfo.getArrives()));
         panel.add(new JLabel("Departure Date:",JLabel.CENTER));
-        panel.add(new JLabel("19-11-2018"));
+        panel.add(new JLabel(String.valueOf(flightInfo.getFlightDate())));
         panel.add(new JLabel("Ticket Class:",JLabel.CENTER));
-        panel.add(new JLabel("VIP"));
+        panel.add(new JLabel("ECO"));
         panel.add(new JLabel("Number passengers:",JLabel.CENTER));
         panel.add(new JLabel("1"));
-        panel.add(new JLabel("Flight Time:",JLabel.CENTER));
-        panel.add(new JLabel("999"));
+//        panel.add(new JLabel("Flight Time:",JLabel.CENTER));
+//        panel.add(new JLabel("999"));
 
         return panel;
     }
@@ -134,9 +144,17 @@ public class frmBooking4 extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent evt){
         String command = evt.getActionCommand();
-        if(command == "Finish"){
+        if(command == "Cancel"){
             setVisible(false);
             new frmMainPage();
+        }
+
+        if (command == "CONFIRM") {
+            try {
+                flightStepFour.booking();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
 
     }
