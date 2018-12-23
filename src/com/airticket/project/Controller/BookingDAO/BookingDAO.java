@@ -49,7 +49,13 @@ public class BookingDAO {
         CallableStatement statement = conn.prepareCall("{call sp_search_flight_when_sale(?, ?, ?)}");
         statement.setString(1, airportIn);
         statement.setString(2, airportOut);
-        statement.setString(3, timeFrom);
+        System.out.println(timeFrom);
+        if (timeFrom == null) {
+            statement.setDate(3, java.sql.Date.valueOf("2018-1-1"));
+        } else {
+            statement.setString(3, timeFrom);
+        }
+
 //        statement.setDate(3, (java.sql.Date) timeFrom);
         boolean hadResults = statement.execute();
 

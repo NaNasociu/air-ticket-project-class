@@ -80,7 +80,13 @@ public class frmBooking extends JFrame implements ActionListener {
             String airPortIn = bookingDAO.convertNameToId(jBoxAirport_out.getSelectedItem().toString());
             String airPortOut = bookingDAO.convertNameToId(jBoxAirport_in.getSelectedItem().toString());
 //            java.sql.Date sqlDate = java.sql.Date.valueOf(date.getDate());
-            String timeFlight = df.format(date.getDate());
+            String timeFlight;
+            if (date.getDate() == null) {
+                timeFlight = null;
+            } else {
+                timeFlight = df.format(date.getDate());
+            }
+
 //            Date timeFlight = new Date();
 //            System.out.println(timeFlight);
             try {
