@@ -76,11 +76,11 @@ public class frmBooking extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent evt){
         String command = evt.getActionCommand();
         if(command == "Search Flights"){
-
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             String airPortIn = bookingDAO.convertNameToId(jBoxAirport_out.getSelectedItem().toString());
             String airPortOut = bookingDAO.convertNameToId(jBoxAirport_in.getSelectedItem().toString());
 //            java.sql.Date sqlDate = java.sql.Date.valueOf(date.getDate());
-            Date timeFlight = date.getDate();
+            String timeFlight = df.format(date.getDate());
 //            Date timeFlight = new Date();
 //            System.out.println(timeFlight);
             try {

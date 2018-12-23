@@ -26,7 +26,7 @@ public class frmBooking2 extends JFrame implements ActionListener {
     private String airport_in;
     private String airport_out;
     private String selectedAirport_Id;
-    private Date timeFlight;
+    private String timeFlight;
     private JTable table = new JTable();
     int size = 15;
     private frmBooking3 step3 = new frmBooking3();
@@ -47,11 +47,11 @@ public class frmBooking2 extends JFrame implements ActionListener {
         this.airport_out = airport_out;
     }
 
-    public Date getTimeFlight() {
+    public String getTimeFlight() {
         return timeFlight;
     }
 
-    public void setTimeFlight(Date timeFlight) {
+    public void setTimeFlight(String timeFlight) {
         this.timeFlight = timeFlight;
     }
 
@@ -70,7 +70,7 @@ public class frmBooking2 extends JFrame implements ActionListener {
 
     }
 
-    public frmBooking2(String airportIn, String airportOut, Date time_Flight) throws SQLException {
+    public frmBooking2(String airportIn, String airportOut, String time_Flight) throws SQLException {
         this.setAirport_in(airportIn);
         this.setAirport_out(airportOut);
         this.setTimeFlight(time_Flight);
