@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7a50f791-2c51-44bf-9d10-a5cbb0f734b9">
+	<property name="ireport.zoom" value="1.6105100000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ticket_id" class="java.lang.String"/>
+	<parameter name="flight_id" class="java.lang.String"/>
+	<parameter name="seat_id" class="java.lang.String"/>
+	<parameter name="boarding_time" class="java.lang.String"/>
+	<parameter name="customer_name" class="java.lang.String"/>
+	<parameter name="departure" class="java.lang.String"/>
+	<parameter name="destination" class="java.lang.String"/>
+	<parameter name="date" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="368d00b2-5d15-4788-bf44-f2b24979f9ac"/>
+				<staticText>
+					<reportElement x="38" y="20" width="302" height="43" forecolor="#FFFFFF" uuid="d78d90a7-283a-40c3-890a-9630b0d007b7"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TICKET INVOICE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="e8c9873d-b22e-4b23-8fd0-ab90f533812e"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[YoungBird UIT]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="aaec43ac-45ac-4fdf-bca3-99060013e935"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="188">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="35288d1e-d647-4a8b-a0a1-346cfc8723fa"/>
+			</line>
+			<textField>
+				<reportElement x="244" y="1" width="100" height="20" uuid="e08bfc55-79bf-44ad-af41-d06bc08092a1"/>
+				<textFieldExpression><![CDATA[$P{ticket_id}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="41" width="555" height="1" uuid="fbd561fd-e60f-48ea-a7af-38cc549a7599"/>
+			</line>
+			<staticText>
+				<reportElement x="80" y="1" width="100" height="20" uuid="a1d9d743-c319-4ac2-8234-54d39d336f41"/>
+				<text><![CDATA[Card Number:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="21" width="100" height="20" uuid="e7c79d07-5fb2-46f9-8224-fff577d30342"/>
+				<text><![CDATA[Customer Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="83" width="100" height="20" uuid="ca778cf8-c1c0-439a-b2d0-8f1024a43ebe"/>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="61" width="555" height="1" uuid="83fbcb23-3803-48ec-a99b-0df259087c11"/>
+			</line>
+			<line>
+				<reportElement x="0" y="82" width="555" height="1" uuid="d3dc25b0-0d45-496a-aedc-7d436c0f9e66"/>
+			</line>
+			<staticText>
+				<reportElement x="80" y="41" width="100" height="20" uuid="ebc6f30c-4614-4897-afbd-139d7831c3fb"/>
+				<text><![CDATA[Filght:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="42" width="100" height="20" uuid="d43fa1d9-ba5c-42e5-88f1-fb2c2986942c"/>
+				<text><![CDATA[Seat number:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="83" width="100" height="20" uuid="bd6e346a-d652-41e6-92f7-b14cb476c3db"/>
+				<text><![CDATA[Boarding time:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="63" width="100" height="20" uuid="77f94d32-deb6-41ea-8ce7-7af348031139"/>
+				<text><![CDATA[Departure Airport:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="63" width="100" height="20" uuid="b0b6ff65-9e85-4038-b8ec-fe3a8970af01"/>
+				<text><![CDATA[Destination Airport:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="244" y="22" width="100" height="20" uuid="dd32ac51-e4bc-49ff-9dc6-64aa2e96c56d"/>
+				<textFieldExpression><![CDATA[$P{customer_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="196" y="43" width="100" height="20" uuid="1cbb373c-ea89-4776-92e7-e5f41e4d8ccd"/>
+				<textFieldExpression><![CDATA[$P{flight_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="441" y="41" width="100" height="20" uuid="f3fe9005-512a-44e2-ba43-61396d93b9b8"/>
+				<textFieldExpression><![CDATA[$P{seat_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="196" y="63" width="100" height="20" uuid="6af5b47d-0650-4608-8bb6-e295bff0e745"/>
+				<textFieldExpression><![CDATA[$P{departure}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="441" y="62" width="100" height="20" uuid="26275a2d-f9c3-4bf3-abea-d2b3ad326b45"/>
+				<textFieldExpression><![CDATA[$P{destination}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="196" y="83" width="100" height="20" uuid="534e6ce5-e82f-42a8-8303-2f7d1ca49256"/>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="441" y="82" width="100" height="20" uuid="f844a365-947f-471b-9bb3-1f862b680b74"/>
+				<textFieldExpression><![CDATA[$P{boarding_time}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="108" width="555" height="1" uuid="9d5363ce-6657-4a0d-917e-e74f52c727af"/>
+			</line>
+			<componentElement>
+				<reportElement x="385" y="138" width="102" height="38" uuid="0100ca7c-c52b-41f9-bde3-858d6702b796"/>
+				<c:EAN13 xmlns:c="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<c:codeExpression><![CDATA["012345678901"]]></c:codeExpression>
+				</c:EAN13>
+			</componentElement>
+			<image>
+				<reportElement isPrintRepeatedValues="false" x="55" y="114" width="226" height="74" uuid="28e03b0d-7b4c-4c9b-99dc-5efc659a5311"/>
+				<imageExpression><![CDATA["C:\\Users\\NhatTan\\Documents\\NetBeansProjects\\AirTicket\\src\\airticket\\GUI\\Ticket\\air.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="385" y="114" width="100" height="20" uuid="499b187c-acb4-47de-a476-c017ed161e9d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Barcode:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="29">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="1c4eecfb-593c-4d01-8a26-e867cdeeedfb"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="512627cc-6ae2-4dbe-8b7b-a4edc33062da"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="e315d964-191c-4ab7-ac98-ff4150362e75"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
