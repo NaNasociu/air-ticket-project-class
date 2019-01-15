@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class frmAirport extends JFrame{
     
-    private int size = 20;
+    private int size = 15;
     private static int row,col,numcols;
     private JTextField txt_airport_id,txt_airport_name,txt_nation,txt_airport_type,txt_address,txt_phone;
     private JButton btn_add, btn_update, btn_delete;
@@ -40,75 +40,92 @@ public class frmAirport extends JFrame{
         pn.setPreferredSize(new Dimension(1300,300));
         GridBagConstraints cons = new GridBagConstraints();
         cons.insets = new Insets(15,15,15,15);
-//        cons.weightx = 1;
-//        cons.weighty = 1;
 
         //AirportID
         cons.gridx = 0;
         cons.gridy = 0;
-        pn.add(new JLabel("Airport ID"),cons);
+        JLabel lb_id = new JLabel("Airport ID");
+        lb_id.setFont(new Font("Times New Roman", Font.PLAIN, 20));        
+        pn.add(lb_id,cons);
         cons.gridx = 1;
         cons.gridy = 0;
         txt_airport_id = new JTextField(size);
+        txt_airport_id.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         pn.add(txt_airport_id,cons);
 
         //AirportName
         cons.gridx = 0;
         cons.gridy = 1;
-        pn.add(new JLabel("Airport Name"),cons);
+        JLabel lb_name = new JLabel("Airport Name");
+        lb_name.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        pn.add(lb_name,cons);
         cons.gridx = 1;
         cons.gridy = 1;
         txt_airport_name = new JTextField(size);
+        txt_airport_name.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         pn.add(txt_airport_name,cons);
 
         //NationID
         cons.gridx = 0;
         cons.gridy = 2;
-        pn.add(new JLabel("Nation"),cons);
+        JLabel lb_nation = new JLabel("Nation");
+        lb_nation.setFont(new Font("Times New Roman", Font.PLAIN, 20));        
+        pn.add(lb_nation,cons);
         cons.gridx = 1;
         cons.gridy = 2;
         txt_nation = new JTextField(size);
+        txt_nation.setFont(new Font("Times New Roman", Font.PLAIN, 20)); 
         pn.add(txt_nation,cons);
 
         //Airport Type
         cons.gridx = 3;
         cons.gridy = 0;
-        pn.add(new JLabel("Airport type"),cons);
+        JLabel lb_type = new JLabel("Airport type");
+        lb_type.setFont(new Font("Times New Roman", Font.PLAIN, 20));         
+        pn.add(lb_type,cons);
         cons.gridx = 4;
         cons.gridy = 0;
         txt_airport_type = new JTextField(size);
+        txt_airport_type.setFont(new Font("Times New Roman", Font.PLAIN, 20)); 
         pn.add(txt_airport_type,cons);
 
         //Address
         cons.gridx = 3;
         cons.gridy = 1;
-        pn.add(new JLabel("Address"),cons);
+        JLabel lb_address = new JLabel("Address");
+        lb_address.setFont(new Font("Times New Roman", Font.PLAIN, 20));          
+        pn.add(lb_address,cons);
         cons.gridx = 4;
         cons.gridy = 1;
         txt_address = new JTextField(size);
+        txt_address.setFont(new Font("Times New Roman", Font.PLAIN, 20)); 
         pn.add(txt_address,cons);
 
         //Phone
         cons.gridx = 3;
         cons.gridy = 2;
-        pn.add(new JLabel("Phone"),cons);
+        JLabel lb_phone = new JLabel("Phone");
+        lb_phone.setFont(new Font("Times New Roman", Font.PLAIN, 20));          
+        pn.add(lb_phone,cons);
         cons.gridx = 4;
         cons.gridy = 2;
         txt_phone = new JTextField(size);
+        txt_phone.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         pn.add(txt_phone,cons);
 
         //Button
         cons.gridx = 1;
         cons.gridy = 4;
-        btn_add    = new JButton("Add");
+        btn_add    = new JButton("Add",new ImageIcon("image/them.png"));
         pn.add(btn_add,cons);
         cons.gridx = 3;
         cons.gridy = 4;
-        btn_update = new JButton("Update");
+        btn_update = new JButton("Update",new ImageIcon("image/capnhat.png"));
         pn.add(btn_update,cons);
         cons.gridx = 4;
         cons.gridy = 4;
-        btn_delete = new JButton("Delete");
+        btn_delete = new JButton("Delete",new ImageIcon("image/xoa_small.png"));
+//        btn_delete.setEnabled(false);
         pn.add(btn_delete,cons);
 
         return pn;
@@ -224,9 +241,9 @@ public class frmAirport extends JFrame{
 
         return pn;
     }
-
+    
     public static void main(String[] args) {
         new frmAirport();
-    }   
-    
+    }
+   
 }

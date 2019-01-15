@@ -48,21 +48,30 @@ public class frmLogin extends JFrame implements ActionListener{
 
     private JPanel createTitlePanel(){
         JPanel panel = new JPanel();
-        panel.add(new JLabel("Air Ticket Login"));
+        JLabel lbl = new JLabel("AirTicket Login");
+        lbl.setFont(new Font("Times New Roman", Font.PLAIN, 20));        
+        panel.add(lbl);
         return panel;
     }
 
     private JPanel createInputPanel(){
         JPanel panel = new JPanel(new GridLayout(2,2,10,10));
-        panel.add(new JLabel("User name:"));
-        panel.add(tf_username = new JTextField(15));
-        panel.add(new JLabel("Password:"));
+        JLabel lb2 = new JLabel("User name:");
+        lb2.setFont(new Font("Times New Roman", Font.PLAIN, 20));        
+        panel.add(lb2);    
+        tf_username = new JTextField(15);
+        tf_username.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        panel.add(tf_username);
+        JLabel lb3 = new JLabel("Password:");
+        lb3.setFont(new Font("Times New Roman", Font.PLAIN, 20));        
+        panel.add(lb3);          
         panel.add(tf_password = createPasswordField(act_login,15));
         return panel;
     }
 
     private JPasswordField createPasswordField(String action, int col){
         JPasswordField password = new JPasswordField(col);
+        password.setFont(new Font("Times New Roman", Font.PLAIN, 20));        
         password.setActionCommand(action);
         password.addActionListener(this);
         return password;
@@ -70,13 +79,18 @@ public class frmLogin extends JFrame implements ActionListener{
 
     private JPanel createButtonPanel(){
         JPanel panel = new JPanel();
-        panel.add(btn_login = createButton(act_login,"Login"));
-        panel.add(btn_clear = createButton(act_clear,"Clear"));
+        btn_login = createButton(act_login,"Login","image/khoa.png");
+        btn_login.setPreferredSize(new Dimension(90, 30));
+        panel.add(btn_login);
+        btn_clear = createButton(act_clear,"Clear","image/huy.png");
+        btn_clear.setPreferredSize(new Dimension(90, 30));
+        panel.add(btn_clear);
         return panel;
     }
 
-    private JButton createButton(String action, String name){
-        JButton btn = new JButton(name);
+    private JButton createButton(String action, String name, String URL){
+        JButton btn = new JButton(name,new ImageIcon(URL));
+        btn.setPreferredSize(new Dimension(100, 50));
         btn.addActionListener(this);
         btn.setActionCommand(action);
         return btn;
@@ -100,13 +114,13 @@ public class frmLogin extends JFrame implements ActionListener{
                 e1.printStackTrace();
             }
         }
-    }  
+        if(act_clear.equals(command)){
+            tf_username.setText("");
+            tf_password.setText("");
+        }           
+    }
     
     public static void main(String[] args) {
         new frmLogin();
     }
-
-    
-    
-    
 }

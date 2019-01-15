@@ -9,6 +9,7 @@ import airticket.Connector.Connector;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.JOptionPane;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.view.JasperViewer;
 /**
@@ -46,27 +47,28 @@ public class CheckingCodeDAO {
             }
             hadResults = st.getMoreResults();
         }
-        try{        
-            String link = "C:\\Users\\NhatTan\\Documents\\NetBeansProjects\\AirTicket\\src\\airticket\\GUI\\Ticket\\invoice.jrxml";
-            JasperReport j_report = JasperCompileManager.compileReport(link);
-            Map<String, Object> params = new HashMap<String, Object>(); 
-           
-            params.put("ticket_id", codeId); 
-            params.put("customer_name", customer_name);  
-            params.put("flight_id", flight_id); 
-            params.put("seat_id", seat_id); 
-            params.put("departure", departure); 
-            params.put("destination", destination); 
-            params.put("date", date_fly); 
-            params.put("boarding_time", boarding_time); 
+        if(customer_name != null){
+            try{        
+                String link = "C:\\Users\\NhatTan\\Documents\\NetBeansProjects\\AirTicket\\src\\airticket\\GUI\\Ticket\\invoice.jrxml";
+                JasperReport j_report = JasperCompileManager.compileReport(link);
+                Map<String, Object> params = new HashMap<String, Object>(); 
 
-            JasperPrint j_print = JasperFillManager.fillReport(j_report, params, new JREmptyDataSource()); 
-            JasperViewer.viewReport(j_print);
-        }catch(Exception e){
-            System.out.println("Loi:" + e.toString());
-        }           
-        
+                params.put("ticket_id", codeId); 
+                params.put("customer_name", customer_name);  
+                params.put("flight_id", flight_id); 
+                params.put("seat_id", seat_id); 
+                params.put("departure", departure); 
+                params.put("destination", destination); 
+                params.put("date", date_fly); 
+                params.put("boarding_time", boarding_time); 
+
+                JasperPrint j_print = JasperFillManager.fillReport(j_report, params, new JREmptyDataSource()); 
+                JasperViewer.viewReport(j_print);
+            }catch(Exception e){
+                System.out.println("Loi:" + e.toString());
+            }             
+        }else{
+            JOptionPane.showMessageDialog(null,"No Result","Fail",JOptionPane.ERROR_MESSAGE);
+        }
     }    
-    
-    
 }

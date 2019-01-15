@@ -29,18 +29,19 @@ public class frmBooking4 extends JFrame{
     public frmBooking4(Customers customers, String flightId) throws SQLException {
         this.customers = customers;
         this.flightId = flightId;
-        System.out.print("Run hereabcd12");
+
         flightStepFour = new FlightStepFour(customers, flightId);
         flightInfo = flightStepFour.getFligtInfo();
-        System.out.print("Run hereabcd");
+
         setTitle("Booking - Summary");
-        setSize(820,550);
+        setSize(1000,700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridLayout(7,1,10,10));
 //        setResizable(false);
 
         //Flight
         JLabel lb_flight = new JLabel("Flight Details");
+        lb_flight.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         lb_flight.setOpaque(true);
         lb_flight.setBackground(Color.PINK);
         add(lb_flight);
@@ -48,6 +49,7 @@ public class frmBooking4 extends JFrame{
 
         //Contact
         JLabel lb_contact = new JLabel("Contact Details");
+        lb_contact.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         lb_contact.setOpaque(true);
         lb_contact.setBackground(Color.cyan);
         add(lb_contact);
@@ -55,6 +57,7 @@ public class frmBooking4 extends JFrame{
 
         //Payment
         JLabel lb_payment = new JLabel("Payment Details");
+        lb_payment.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         lb_payment.setOpaque(true);
         lb_payment.setBackground(Color.gray);
         add(lb_payment);
@@ -70,8 +73,8 @@ public class frmBooking4 extends JFrame{
     
     private JPanel createButtonPanel(){
         JPanel panel = new JPanel();
-        panel.add(createJButton("CONFIRM"));
-        panel.add(createJButton("Cancel"));
+        panel.add(createJButton("CONFIRM","image/icon_Ok.png"));
+        panel.add(createJButton("Cancel","image/icon_Delete.png"));
         return panel;
     }
 
@@ -111,9 +114,9 @@ public class frmBooking4 extends JFrame{
     private JPanel createPaymentPanel(){
         JPanel panel = new JPanel(new GridLayout(2,4,5,5));
         panel.add(new JLabel("Charge:",JLabel.CENTER));
-        panel.add(new JLabel("10.000"));
+        panel.add(new JLabel("100.000"));
         panel.add(new JLabel("Fare:",JLabel.CENTER));
-        panel.add(new JLabel("10.000"));
+        panel.add(new JLabel("100.000"));
         panel.add(new JLabel("Tax:",JLabel.CENTER));
         panel.add(new JLabel("10.000"));
         panel.add(new JLabel("Total:",JLabel.CENTER));
@@ -121,8 +124,8 @@ public class frmBooking4 extends JFrame{
         return panel;
     }
 
-    private JButton createJButton(String name){
-        JButton btn = new JButton(name);
+    private JButton createJButton(String name,String URL){
+        JButton btn = new JButton(name,new ImageIcon(URL));
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

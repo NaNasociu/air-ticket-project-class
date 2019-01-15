@@ -23,9 +23,10 @@ import javax.swing.table.DefaultTableModel;
  * @author NhatTan
  */
 public class frmBooking2 extends JFrame{
-    String[] columnNames = {"Id", "Flight Date", "Departs", "Arrives", "Flight Detail","Promo", "Eco","Skyboss"};
+    String[] columnNames = {"Id", "Flight Date", "Departs", "Arrives", "Flight Detail","Price"};
     ArrayList<FlightStepTwo> flightList = new ArrayList<FlightStepTwo>();
     private DefaultTableModel tableModel = new DefaultTableModel();
+    private JButton btn_next, btn_cancel;
     
     private String airport_in;
     private String airport_out;
@@ -52,7 +53,7 @@ public class frmBooking2 extends JFrame{
         this.setTimeFlight(time_Flight);
 
         setTitle("Booking - step 2");
-        setSize(820,550);
+        setSize(1000,700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
 //        setResizable(false);
@@ -64,6 +65,8 @@ public class frmBooking2 extends JFrame{
         setVisible(true);
         setLocationRelativeTo(null);
 
+        table.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        table.setFillsViewportHeight(true);
         table.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -99,15 +102,38 @@ public class frmBooking2 extends JFrame{
     private JPanel createMainPanel() throws SQLException {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(new EmptyBorder(10,10,10,10));
-        panel.add(new JLabel("Select Travel Options"),BorderLayout.NORTH);
+        JLabel lb = new JLabel("Select Travel Options");
+        lb.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        panel.add(lb,BorderLayout.NORTH);
         panel.add(createInputPanel(),BorderLayout.CENTER);
         return panel;
     }
 
     private JPanel createButtonPanel(){
-        JPanel panel = new JPanel(new GridLayout(2,1,6,5));
-        panel.add(createJButton("Continue"));
-        panel.add(createJButton("Back"));
+        JPanel panel = new JPanel(new GridLayout(1,2,20,20));
+        btn_next = new JButton("Continue", new ImageIcon("image/next_medium.png"));
+        btn_cancel = new JButton("Back", new ImageIcon("image/back_medium.png"));
+        btn_cancel.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                try {
+                    new frmBooking();
+                } catch (SQLException ex) {
+                    Logger.getLogger(frmBooking2.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+        
+        btn_next.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                step3.setVisible(true);                
+            }
+        });
+        panel.add(btn_cancel);        
+        panel.add(btn_next);
         return panel;
     }
 
@@ -126,38 +152,14 @@ public class frmBooking2 extends JFrame{
             rows[3] = temp.getArrives();
             rows[4] = temp.getEconomy();
             rows[5] = temp.getPremium();
-//            rows[6] = temp.getBusiness();
             System.out.println(rows);
             tableModel.addRow(rows);
         }
 
-        JScrollPane scrollPane = new JScrollPane(table);
+        JScrollPane scrollPane  = new JScrollPane(table);
+        scrollPane.setPreferredSize(new Dimension(900, 500));
         panel.add(scrollPane);
         return panel;
-    }
-
-    private JButton createJButton(String name){
-        JButton btn = new JButton(name);
-        btn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String command = e.getActionCommand();
-                if(command == "Continue"){
-                    setVisible(false);
-                    step3.setVisible(true);
-                }
-
-                if(command == "Back"){
-                    setVisible(false);
-                    try {
-                        new frmBooking();
-                    } catch (SQLException ex) {
-                        Logger.getLogger(frmBooking2.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }                              
-            }
-        });
-        return btn;
     }
 
 }

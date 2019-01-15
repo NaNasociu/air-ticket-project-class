@@ -22,7 +22,7 @@ import javax.swing.border.EmptyBorder;
  * @author NhatTan
  */
 public class frmBooking3 extends JFrame{
-    int size = 15;
+    int size = 20;
     String[] choices   = {"Mr","Ms/Mrs"};
     private JDateChooser birthdate, passportExipry;
     private JComboBox jTitle;
@@ -35,7 +35,7 @@ public class frmBooking3 extends JFrame{
     
     public frmBooking3(){
         setTitle("Booking - step 3");
-        setSize(820,550);
+        setSize(1000,700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
 //        setResizable(false);
@@ -48,56 +48,105 @@ public class frmBooking3 extends JFrame{
     
     private JPanel createMainPanel(){
         JPanel panel = new JPanel(new BorderLayout());
-        panel.setBorder(new EmptyBorder(10,10,10,10));
-        //panel.add(new JLabel("Primary Reservation Contact Information"),BorderLayout.NORTH);
+        panel.setBorder(new EmptyBorder(50,50,50,50));
         panel.add(createInputPanel(),BorderLayout.CENTER);
         return panel;
     }
 
     private JPanel createButtonPanel(){
-        JPanel panel = new JPanel(new GridLayout(2,1,5,5));
-        panel.add(createJButton("Continue"));
-        panel.add(createJButton("Back"));
+        JPanel panel = new JPanel(new GridLayout(2,1,20,20));
+        panel.add(createJButton("Continue","image/next_medium.png"));
+        panel.add(createJButton("Back","image/back_medium.png"));
         return panel;
     }
 
     private JPanel createInputPanel(){
-        JPanel panel = new JPanel(new GridLayout(13,2,5,5));
-        panel.add(new JLabel("Title:"));
-        panel.add(jTitle = new JComboBox(choices));
-        panel.add(new JLabel("Family Name:"));
-        panel.add(tf_familyName = new JTextField(size));
-        panel.add(new JLabel("Middle and Given Name:"));
-        panel.add(tf_middleName = new JTextField(size));
-        panel.add(new JLabel("ID Card"));
-        panel.add(tf_idCard = new JTextField(size));
-        panel.add(new JLabel("Address:"));
-        panel.add(tf_address = new JTextField(size));
-        panel.add(new JLabel("City:"));
-        panel.add(tf_city = new JTextField(size));
-        panel.add(new JLabel("Province/State:"));
-        panel.add(tf_state = new JTextField(size));
-        panel.add(new JLabel("Email:"));
-        panel.add(tf_email = new JTextField(size));
-        panel.add(new JLabel("Date of Birth:"));
+        JPanel panel = new JPanel(new GridLayout(13,2,10,10));
+        JLabel lb_title = new JLabel("Title:");
+        lb_title.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        panel.add(lb_title);
+        jTitle = new JComboBox(choices);
+        jTitle.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        panel.add(jTitle);
+        JLabel lb_fname = new JLabel("Family Name:");
+        lb_fname.setFont(new Font("Times New Roman", Font.PLAIN, 20));        
+        panel.add(lb_fname);
+        tf_familyName = new JTextField(size);
+        tf_familyName.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        panel.add(tf_familyName);
+        JLabel lb_lname = new JLabel("Middle and Given Name:");
+        lb_lname.setFont(new Font("Times New Roman", Font.PLAIN, 20));           
+        panel.add(lb_lname);
+        tf_middleName = new JTextField(size);
+        tf_middleName.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        panel.add(tf_middleName);
+        JLabel lb_idcard = new JLabel("ID Card:");
+        lb_idcard.setFont(new Font("Times New Roman", Font.PLAIN, 20));          
+        panel.add(lb_idcard);
+        tf_idCard = new JTextField(size);
+        tf_idCard.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        panel.add(tf_idCard);
+        JLabel lb_address = new JLabel("Address:");
+        lb_address.setFont(new Font("Times New Roman", Font.PLAIN, 20));         
+        panel.add(lb_address);
+        tf_address = new JTextField(size);
+        tf_address.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        panel.add(tf_address);
+        JLabel lb_city = new JLabel("City:");
+        lb_city.setFont(new Font("Times New Roman", Font.PLAIN, 20));            
+        panel.add(lb_city);
+        tf_city = new JTextField(size);
+        tf_city.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        panel.add(tf_city);
+        JLabel lb_province = new JLabel("Province/State:");
+        lb_province.setFont(new Font("Times New Roman", Font.PLAIN, 20));         
+        panel.add(lb_province);
+        tf_state = new JTextField(size);
+        tf_state.setFont(new Font("Times New Roman", Font.PLAIN, 20)); 
+        panel.add(tf_state);
+        JLabel lb_email = new JLabel("Email:");
+        lb_email.setFont(new Font("Times New Roman", Font.PLAIN, 20));         
+        panel.add(lb_email);
+        tf_email = new JTextField(size);
+        tf_email.setFont(new Font("Times New Roman", Font.PLAIN, 20)); 
+        panel.add(tf_email);
+        JLabel lb_bday = new JLabel("Date of Birth:");
+        lb_bday.setFont(new Font("Times New Roman", Font.PLAIN, 20));         
+        panel.add(lb_bday);
         birthdate = new JDateChooser();
         birthdate.setDateFormatString("yyyy-MM-dd");
+        birthdate.setFont(new Font("Times New Roman", Font.PLAIN, 20)); 
         panel.add(birthdate);
-        panel.add(new JLabel("Mobile Number:"));
-        panel.add(tf_mobile = new JTextField(size));
-        panel.add(new JLabel("Passport Number:"));
-        panel.add(tf_passsport = new JTextField(size));
-        panel.add(new JLabel("Passport Expiry:"));
+        JLabel lb_mobile = new JLabel("Mobile:");
+        lb_mobile.setFont(new Font("Times New Roman", Font.PLAIN, 20));        
+        panel.add(lb_mobile);
+        tf_mobile = new JTextField(size);
+        tf_mobile.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        panel.add(tf_mobile);
+        JLabel lb_passport = new JLabel("Passport Number:");
+        lb_passport.setFont(new Font("Times New Roman", Font.PLAIN, 20));         
+        panel.add(lb_passport);
+        tf_passsport = new JTextField(size);
+        tf_passsport.setFont(new Font("Times New Roman", Font.PLAIN, 20)); 
+        panel.add(tf_passsport);
+        JLabel lb_passport_ex = new JLabel("Passport Expiry:");
+        lb_passport_ex.setFont(new Font("Times New Roman", Font.PLAIN, 20));         
+        panel.add(lb_passport_ex);
         passportExipry = new JDateChooser();
         passportExipry.setDateFormatString("yyyy-MM-dd");
+        passportExipry.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         panel.add(passportExipry);
-        panel.add(new JLabel("Nationality:"));
-        panel.add(tf_nationality = new JTextField(size));
+        JLabel lb_nation = new JLabel("Nationality:");
+        lb_nation.setFont(new Font("Times New Roman", Font.PLAIN, 20));          
+        panel.add(lb_nation);
+        tf_nationality = new JTextField(size);
+        tf_nationality.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        panel.add(tf_nationality);
         return panel;
     }    
     
-    private JButton createJButton(String name){
-        JButton btn = new JButton(name);
+    private JButton createJButton(String name, String URL){
+        JButton btn = new JButton(name,new ImageIcon(URL));
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -136,7 +185,6 @@ public class frmBooking3 extends JFrame{
                         ex.printStackTrace();
                     }
                 }
-
                 if(command == "Back"){
                     setVisible(false);
                     new frmMenu();
@@ -145,10 +193,5 @@ public class frmBooking3 extends JFrame{
         });
         return btn;
     }    
-    
-    
-    
-    
-    
     
 }

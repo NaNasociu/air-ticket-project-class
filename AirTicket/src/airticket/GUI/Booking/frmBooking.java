@@ -27,6 +27,7 @@ public class frmBooking extends JFrame{
     
     private JComboBox jBoxAirport_in, jBoxAirport_out;
     private JDateChooser date;
+    private JButton btn_search, btn_cancel;
     String[] airport_in;
     String[] airport_out;    
     
@@ -37,78 +38,94 @@ public class frmBooking extends JFrame{
         airport_in = bookingDAO.getAirportName();
         airport_out = bookingDAO.getAirportName();        
         setTitle("Booking - step 1");
-        setSize(820,550);
+        setSize(1000,700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new FlowLayout());
+        setLayout(new GridBagLayout());
 //        setResizable(false);
 
-        add(createMainPanel());
-        add(createButtonPanel());
+        date = new JDateChooser();
+        date.setDateFormatString("yyyy-MM-dd");
+        date.setPreferredSize(new Dimension(240, 40));
+        date.setFont(new Font("Times New Roman", Font.PLAIN, 20));        
 
+        GridBagConstraints cons = new GridBagConstraints();
+        cons.insets = new Insets(15,15,15,15);
+        
+        JLabel lbl = new JLabel("Origin:");
+        lbl.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        JLabel lb2 = new JLabel("Destination:");
+        lb2.setFont(new Font("Times New Roman", Font.PLAIN, 20));   
+        JLabel lb3 = new JLabel("From:");
+        lb3.setFont(new Font("Times New Roman", Font.PLAIN, 20));       
+        
+        jBoxAirport_in = new JComboBox(airport_in);
+        jBoxAirport_in.setFont(new Font("Times New Roman", Font.PLAIN, 20));  
+        jBoxAirport_out = new JComboBox(airport_out);
+        jBoxAirport_out.setFont(new Font("Times New Roman", Font.PLAIN, 20));        
+        
+        cons.gridx = 0;
+        cons.gridy = 0;
+        add(lbl,cons);
+        cons.gridx = 1;
+        cons.gridy = 0;
+        add(jBoxAirport_in,cons);        
+       
+        cons.gridx = 0;
+        cons.gridy = 1;
+        add(lb2,cons); 
+        cons.gridx = 1;
+        cons.gridy = 1;        
+        add(jBoxAirport_out,cons);
+        
+        cons.gridx = 0;
+        cons.gridy = 2;
+        add(lb3,cons);   
+        cons.gridx = 1;
+        cons.gridy = 2;
+        add(date,cons);        
+ 
+        cons.gridx = 1;
+        cons.gridy = 3;
+        btn_search = new JButton("Search", new ImageIcon("image/timkiem_small.png"));
+        btn_search.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                String airPortOut = bookingDAO.convertNameToId(jBoxAirport_out.getSelectedItem().toString());
+                String airPortIn = bookingDAO.convertNameToId(jBoxAirport_in.getSelectedItem().toString());
+                String timeFlight;
+                if (date.getDate() == null){
+                    timeFlight = null;                    
+                }else{
+                    timeFlight = df.format(date.getDate());
+                }
+
+                try {
+                    frmBooking2 frmBooking2 = new frmBooking2(airPortIn, airPortOut, timeFlight);
+                } catch (SQLException ex) {
+                    Logger.getLogger(frmBooking.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                setVisible(false);                
+            }
+        });
+        add(btn_search,cons);          
+        
+        cons.gridx = 0;
+        cons.gridy = 3;
+        btn_cancel = new JButton("Cancel", new ImageIcon("image/quaylai_small.png"));
+        btn_cancel.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new frmMenu();
+            }
+        });
+        add(btn_cancel,cons);         
+        
         setVisible(true);
         setLocationRelativeTo(null);        
     }
-    
-    private JPanel createMainPanel(){
-        JPanel panel = new JPanel(new BorderLayout());
-        panel.setBorder(new EmptyBorder(10,10,10,10));
-        panel.add(createInputPanel(),BorderLayout.CENTER);
-        return panel;
-    }
 
-    private JPanel createInputPanel(){
-        JPanel panel = new JPanel(new GridLayout(6,2,5,5));
-        panel.add(new JLabel("Origin:"));
-        panel.add(jBoxAirport_in = new JComboBox(airport_in));
-        panel.add(new JLabel("Destination:"));
-        panel.add(jBoxAirport_out = new JComboBox(airport_out));
-        panel.add(new JLabel("From:"));
-        date = new JDateChooser();
-        date.setDateFormatString("yyyy-MM-dd");
-        panel.add(date);
-        return panel;
-    }
-    
-    private JPanel createButtonPanel(){
-        JPanel panel = new JPanel(new GridLayout(2,1,5,5));
-        panel.add(createJButton("Search Flights"));
-        panel.add(createJButton("Cancel"));
-        return panel;
-    }
-
-    private JButton createJButton(String name){
-        JButton btn = new JButton(name);
-        btn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String command = e.getActionCommand();
-                if(command == "Search Flights"){
-                    DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-                    String airPortOut = bookingDAO.convertNameToId(jBoxAirport_out.getSelectedItem().toString());
-                    String airPortIn = bookingDAO.convertNameToId(jBoxAirport_in.getSelectedItem().toString());
-                    String timeFlight;
-                    if (date.getDate() == null){
-                        timeFlight = null;                    
-                    }else{
-                        timeFlight = df.format(date.getDate());
-                    }
-
-                    try {
-                        frmBooking2 frmBooking2 = new frmBooking2(airPortIn, airPortOut, timeFlight);
-                    } catch (SQLException ex) {
-                        Logger.getLogger(frmBooking.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    setVisible(false);
-                }
-
-                if(command == "Cancel"){
-                    setVisible(false);
-                    new frmMenu();
-                }           
-            }
-        });
-        return btn;
-    }   
     
     public static void main(String[] args) throws SQLException {
         new frmBooking();
